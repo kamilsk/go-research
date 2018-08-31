@@ -1,6 +1,6 @@
-> # shared:research-go:errors
+> # Working with errors
 >
-> Research result.
+> The research result.
 
 ## Error wrappers
 
