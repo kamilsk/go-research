@@ -5,6 +5,10 @@
 [![Patreon](https://img.shields.io/badge/patreon-donate-orange.svg)](https://www.patreon.com/octolab)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
+## Packages
+
+### [Working with errors](errors)
+
 ## Specific researches
 
 ### [kamilsk/click](https://github.com/kamilsk/click/tree/research)
