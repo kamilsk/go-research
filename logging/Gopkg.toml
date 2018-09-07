@@ -1,0 +1,27 @@
+[[constraint]]
+  name = "github.com/apex/log"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/francoispqt/onelog"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/inconshreveable/log15"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/rs/zerolog"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/sirupsen/logrus"
+  branch = "master"
+
+[[constraint]]
+  name = "go.uber.org/zap"
+  branch = "master"
+
+[prune]
+  go-tests = true
+  unused-packages = true

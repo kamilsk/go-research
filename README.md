@@ -7,6 +7,8 @@
 
 ## Packages
 
+### [Logging](logging)
+
 ### [Working with errors](errors)
 
 ## Specific researches
