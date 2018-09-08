@@ -1,5 +1,7 @@
 package gojay
 
+import "reflect"
+
 // DecodeArray reads the next JSON-encoded value from its input and stores it in the value pointed to by v.
 //
 // v must implement UnmarshalerJSONArray.
@@ -13,14 +15,11 @@ func (dec *Decoder) DecodeArray(arr UnmarshalerJSONArray) error {
 	return err
 }
 func (dec *Decoder) decodeArray(arr UnmarshalerJSONArray) (int, error) {
-	// not an array not an error, but do not know what to do
-	// do not check syntax
 	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
 		switch dec.data[dec.cursor] {
 		case ' ', '\n', '\t', '\r', ',':
 			continue
 		case '[':
-			n := 0
 			dec.cursor = dec.cursor + 1
 			// array is open, char is not space start readings
 			for dec.nextChar() != 0 {
@@ -34,7 +33,6 @@ func (dec *Decoder) decodeArray(arr UnmarshalerJSONArray) (int, error) {
 				if err != nil {
 					return 0, err
 				}
-				n++
 			}
 			return 0, dec.raiseInvalidJSONErr(dec.cursor)
 		case 'n':
@@ -50,6 +48,69 @@ func (dec *Decoder) decodeArray(arr UnmarshalerJSONArray) (int, error) {
 			// can't unmarshall to struct
 			// we skip array and set Error
 			dec.err = dec.makeInvalidUnmarshalErr(arr)
+			err := dec.skipData()
+			if err != nil {
+				return 0, err
+			}
+			return dec.cursor, nil
+		default:
+			return 0, dec.raiseInvalidJSONErr(dec.cursor)
+		}
+	}
+	return 0, dec.raiseInvalidJSONErr(dec.cursor)
+}
+func (dec *Decoder) decodeArrayNull(v interface{}) (int, error) {
+	vv := reflect.ValueOf(v)
+	vvt := vv.Type()
+	if vvt.Kind() != reflect.Ptr || vvt.Elem().Kind() != reflect.Ptr {
+		dec.err = ErrUnmarshalPtrExpected
+		return 0, dec.err
+	}
+	// not an array not an error, but do not know what to do
+	// do not check syntax
+	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
+		switch dec.data[dec.cursor] {
+		case ' ', '\n', '\t', '\r', ',':
+			continue
+		case '[':
+			dec.cursor = dec.cursor + 1
+			// create our new type
+			elt := vv.Elem()
+			n := reflect.New(elt.Type().Elem())
+			var arr UnmarshalerJSONArray
+			var ok bool
+			if arr, ok = n.Interface().(UnmarshalerJSONArray); !ok {
+				dec.err = dec.makeInvalidUnmarshalErr((UnmarshalerJSONArray)(nil))
+				return 0, dec.err
+			}
+			// array is open, char is not space start readings
+			for dec.nextChar() != 0 {
+				// closing array
+				if dec.data[dec.cursor] == ']' {
+					elt.Set(n)
+					dec.cursor = dec.cursor + 1
+					return dec.cursor, nil
+				}
+				// calling unmarshall function for each element of the slice
+				err := arr.UnmarshalJSONArray(dec)
+				if err != nil {
+					return 0, err
+				}
+			}
+			return 0, dec.raiseInvalidJSONErr(dec.cursor)
+		case 'n':
+			// is null
+			dec.cursor++
+			err := dec.assertNull()
+			if err != nil {
+				return 0, err
+			}
+			dec.cursor++
+			return dec.cursor, nil
+		case '{', '"', 'f', 't', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+			// can't unmarshall to struct
+			// we skip array and set Error
+			dec.err = dec.makeInvalidUnmarshalErr((UnmarshalerJSONArray)(nil))
 			err := dec.skipData()
 			if err != nil {
 				return 0, err
@@ -79,26 +140,34 @@ func (dec *Decoder) skipArray() (int, error) {
 			arraysOpen++
 		case '"':
 			j++
-			for ; j < dec.length; j++ {
+			var isInEscapeSeq bool
+			var isFirstQuote = true
+			for ; j < dec.length || dec.read(); j++ {
 				if dec.data[j] != '"' {
 					continue
 				}
-				if dec.data[j-1] != '\\' {
+				if dec.data[j-1] != '\\' || (!isInEscapeSeq && !isFirstQuote) {
 					break
+				} else {
+					isInEscapeSeq = false
+				}
+				if isFirstQuote {
+					isFirstQuote = false
 				}
 				// loop backward and count how many anti slash found
 				// to see if string is effectively escaped
-				ct := 1
-				for i := j - 2; i > 0; i-- {
+				ct := 0
+				for i := j - 1; i > 0; i-- {
 					if dec.data[i] != '\\' {
 						break
 					}
 					ct++
 				}
-				// is even number of slashes, quote is not escaped
+				// is pair number of slashes, quote is not escaped
 				if ct&1 == 0 {
 					break
 				}
+				isInEscapeSeq = true
 			}
 		default:
 			continue

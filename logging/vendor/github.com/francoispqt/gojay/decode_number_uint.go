@@ -39,6 +39,51 @@ func (dec *Decoder) decodeUint8(v *uint8) error {
 			if err != nil {
 				return err
 			}
+			dec.cursor++
+			return nil
+		default:
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+	}
+	return dec.raiseInvalidJSONErr(dec.cursor)
+}
+func (dec *Decoder) decodeUint8Null(v **uint8) error {
+	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
+		switch c := dec.data[dec.cursor]; c {
+		case ' ', '\n', '\t', '\r', ',':
+			continue
+		case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+			val, err := dec.getUint8()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint8)
+			}
+			**v = val
+			return nil
+		case '-': // if negative, we just set it to 0 and set error
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint8)
+			}
+			return nil
+		case 'n':
+			dec.cursor++
+			err := dec.assertNull()
+			if err != nil {
+				return err
+			}
+			dec.cursor++
 			return nil
 		default:
 			dec.err = dec.makeInvalidUnmarshalErr(v)
@@ -108,6 +153,51 @@ func (dec *Decoder) decodeUint16(v *uint16) error {
 			if err != nil {
 				return err
 			}
+			dec.cursor++
+			return nil
+		default:
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+	}
+	return dec.raiseInvalidJSONErr(dec.cursor)
+}
+func (dec *Decoder) decodeUint16Null(v **uint16) error {
+	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
+		switch c := dec.data[dec.cursor]; c {
+		case ' ', '\n', '\t', '\r', ',':
+			continue
+		case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+			val, err := dec.getUint16()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint16)
+			}
+			**v = val
+			return nil
+		case '-':
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint16)
+			}
+			return nil
+		case 'n':
+			dec.cursor++
+			err := dec.assertNull()
+			if err != nil {
+				return err
+			}
+			dec.cursor++
 			return nil
 		default:
 			dec.err = dec.makeInvalidUnmarshalErr(v)
@@ -177,6 +267,51 @@ func (dec *Decoder) decodeUint32(v *uint32) error {
 			if err != nil {
 				return err
 			}
+			dec.cursor++
+			return nil
+		default:
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+	}
+	return dec.raiseInvalidJSONErr(dec.cursor)
+}
+func (dec *Decoder) decodeUint32Null(v **uint32) error {
+	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
+		switch c := dec.data[dec.cursor]; c {
+		case ' ', '\n', '\t', '\r', ',':
+			continue
+		case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+			val, err := dec.getUint32()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint32)
+			}
+			**v = val
+			return nil
+		case '-':
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint32)
+			}
+			return nil
+		case 'n':
+			dec.cursor++
+			err := dec.assertNull()
+			if err != nil {
+				return err
+			}
+			dec.cursor++
 			return nil
 		default:
 			dec.err = dec.makeInvalidUnmarshalErr(v)
@@ -245,6 +380,51 @@ func (dec *Decoder) decodeUint64(v *uint64) error {
 			if err != nil {
 				return err
 			}
+			dec.cursor++
+			return nil
+		default:
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			return nil
+		}
+	}
+	return dec.raiseInvalidJSONErr(dec.cursor)
+}
+func (dec *Decoder) decodeUint64Null(v **uint64) error {
+	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
+		switch c := dec.data[dec.cursor]; c {
+		case ' ', '\n', '\t', '\r', ',':
+			continue
+		case '0', '1', '2', '3', '4', '5', '6', '7', '8', '9':
+			val, err := dec.getUint64()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint64)
+			}
+			**v = val
+			return nil
+		case '-':
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			if *v == nil {
+				*v = new(uint64)
+			}
+			return nil
+		case 'n':
+			dec.cursor++
+			err := dec.assertNull()
+			if err != nil {
+				return err
+			}
+			dec.cursor++
 			return nil
 		default:
 			dec.err = dec.makeInvalidUnmarshalErr(v)

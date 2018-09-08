@@ -44,7 +44,9 @@ func (e Entry) Bool(k string, v bool) Entry {
 
 // Err adds an error to the log entry.
 func (e Entry) Err(k string, v error) Entry {
-	e.enc.StringKey(k, v.Error())
+	if v != nil {
+		e.enc.StringKey(k, v.Error())
+	}
 	return e
 }
 
@@ -69,7 +71,6 @@ func (e Entry) Array(k string, obj gojay.MarshalerJSONArray) Entry {
 }
 
 // ChainEntry is for chaining calls to the entry.
-
 type ChainEntry struct {
 	Entry
 	disabled bool
@@ -131,12 +132,14 @@ func (e ChainEntry) Bool(k string, v bool) ChainEntry {
 	return e
 }
 
-// Error adds an error to the log entry.
+// Err adds an error to the log entry.
 func (e ChainEntry) Err(k string, v error) ChainEntry {
 	if e.disabled {
 		return e
 	}
-	e.enc.StringKey(k, v.Error())
+	if v != nil {
+		e.enc.StringKey(k, v.Error())
+	}
 	return e
 }
 

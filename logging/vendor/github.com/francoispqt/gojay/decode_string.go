@@ -20,7 +20,7 @@ func (dec *Decoder) decodeString(v *string) error {
 			// is string
 			continue
 		case '"':
-			dec.cursor = dec.cursor + 1
+			dec.cursor++
 			start, end, err := dec.getString()
 			if err != nil {
 				return err
@@ -51,128 +51,93 @@ func (dec *Decoder) decodeString(v *string) error {
 	return nil
 }
 
-func (dec *Decoder) parseEscapedString() error {
-	// know where to stop slash
-	start := dec.cursor
+func (dec *Decoder) decodeStringNull(v **string) error {
 	for ; dec.cursor < dec.length || dec.read(); dec.cursor++ {
-		if dec.data[dec.cursor] != '\\' {
-			d := dec.data[dec.cursor]
-			dec.cursor = dec.cursor + 1
-			nSlash := dec.cursor - start
-			switch d {
-			case '"':
-				// nSlash must be odd
-				if nSlash&1 != 1 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				diff := (nSlash - 1) >> 1
-				dec.data = append(dec.data[:start+diff-1], dec.data[dec.cursor-1:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= nSlash - diff
-				return nil
-			case 'u':
-				if nSlash&1 == 0 {
-					diff := nSlash >> 1
-					dec.data = append(dec.data[:start+diff-1], dec.data[dec.cursor-1:]...)
-					dec.length = len(dec.data)
-					dec.cursor -= nSlash - diff
-					return nil
-				}
-				start := dec.cursor - 2 - ((nSlash - 1) >> 1)
-				str, err := dec.parseUnicode()
-				if err != nil {
-					dec.err = err
-					return err
-				}
-				diff := dec.cursor - start
-				dec.data = append(append(dec.data[:start], str...), dec.data[dec.cursor:]...)
-				dec.length = len(dec.data)
-				dec.cursor = dec.cursor - diff + len(str)
-				return nil
-			case 'b':
-				// number of slash must be even
-				// if is odd number of slashes
-				// divide nSlash - 1 by 2 and leave last one
-				// else divide nSlash by 2 and leave the letter
-				if nSlash&1 != 0 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				var diff int
-				diff = nSlash >> 1
-				dec.data = append(append(dec.data[:start+diff-2], '\b'), dec.data[dec.cursor:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= nSlash - diff + 1
-				return nil
-			case 'f':
-				// number of slash must be even
-				// if is odd number of slashes
-				// divide nSlash - 1 by 2 and leave last one
-				// else divide nSlash by 2 and leave the letter
-				if nSlash&1 != 0 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				var diff int
-				diff = nSlash >> 1
-				dec.data = append(append(dec.data[:start+diff-2], '\f'), dec.data[dec.cursor:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= nSlash - diff + 1
-				return nil
-			case 'n':
-				// number of slash must be even
-				// if is odd number of slashes
-				// divide nSlash - 1 by 2 and leave last one
-				// else divide nSlash by 2 and leave the letter
-				if nSlash&1 != 0 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				var diff int
-				diff = nSlash >> 1
-				dec.data = append(append(dec.data[:start+diff-2], '\n'), dec.data[dec.cursor:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= nSlash - diff + 1
-				return nil
-			case 'r':
-				// number of slash must be even
-				// if is odd number of slashes
-				// divide nSlash - 1 by 2 and leave last one
-				// else divide nSlash by 2 and leave the letter
-				if nSlash&1 != 0 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				var diff int
-				diff = nSlash >> 1
-				dec.data = append(append(dec.data[:start+diff-2], '\r'), dec.data[dec.cursor:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= nSlash - diff + 1
-				return nil
-			case 't':
-				// number of slash must be even
-				// if is odd number of slashes
-				// divide nSlash - 1 by 2 and leave last one
-				// else divide nSlash by 2 and leave the letter
-				if nSlash&1 != 0 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				var diff int
-				diff = nSlash >> 1
-				dec.data = append(append(dec.data[:start+diff-2], '\t'), dec.data[dec.cursor:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= nSlash - diff + 1
-				return nil
-			default:
-				// nSlash must be even
-				if nSlash&1 == 1 {
-					return dec.raiseInvalidJSONErr(dec.cursor)
-				}
-				diff := nSlash >> 1
-				dec.data = append(dec.data[:start+diff-1], dec.data[dec.cursor-1:]...)
-				dec.length = len(dec.data)
-				dec.cursor -= (nSlash - diff)
-				return nil
+		switch dec.data[dec.cursor] {
+		case ' ', '\n', '\t', '\r', ',':
+			// is string
+			continue
+		case '"':
+			dec.cursor++
+			start, end, err := dec.getString()
+			if err != nil {
+				return err
 			}
+			if *v == nil {
+				*v = new(string)
+			}
+			// we do minus one to remove the last quote
+			d := dec.data[start : end-1]
+			**v = *(*string)(unsafe.Pointer(&d))
+			dec.cursor = end
+			return nil
+		// is nil
+		case 'n':
+			dec.cursor++
+			err := dec.assertNull()
+			if err != nil {
+				return err
+			}
+			dec.cursor++
+			return nil
+		default:
+			dec.err = dec.makeInvalidUnmarshalErr(v)
+			err := dec.skipData()
+			if err != nil {
+				return err
+			}
+			return nil
 		}
 	}
-	return dec.raiseInvalidJSONErr(dec.cursor)
+	return nil
+}
+
+func (dec *Decoder) parseEscapedString() error {
+	if dec.cursor >= dec.length && !dec.read() {
+		return dec.raiseInvalidJSONErr(dec.cursor)
+	}
+	switch dec.data[dec.cursor] {
+	case '"':
+		dec.data[dec.cursor] = '"'
+	case '\\':
+		dec.data[dec.cursor] = '\\'
+	case '/':
+		dec.data[dec.cursor] = '/'
+	case 'b':
+		dec.data[dec.cursor] = '\b'
+	case 'f':
+		dec.data[dec.cursor] = '\f'
+	case 'n':
+		dec.data[dec.cursor] = '\n'
+	case 'r':
+		dec.data[dec.cursor] = '\r'
+	case 't':
+		dec.data[dec.cursor] = '\t'
+	case 'u':
+		start := dec.cursor
+		dec.cursor++
+		str, err := dec.parseUnicode()
+		if err != nil {
+			return err
+		}
+		diff := dec.cursor - start
+		dec.data = append(append(dec.data[:start-1], str...), dec.data[dec.cursor:]...)
+		dec.length = len(dec.data)
+		dec.cursor += len(str) - diff - 1
+
+		return nil
+	default:
+		return dec.raiseInvalidJSONErr(dec.cursor)
+	}
+
+	dec.data = append(dec.data[:dec.cursor-1], dec.data[dec.cursor:]...)
+	dec.length--
+
+	// Since we've lost a character, our dec.cursor offset is now
+	// 1 past the escaped character which is precisely where we
+	// want it.
+
+	return nil
 }
 
 func (dec *Decoder) getString() (int, int, error) {
@@ -214,7 +179,7 @@ func (dec *Decoder) skipEscapedString() error {
 					return dec.raiseInvalidJSONErr(dec.cursor)
 				}
 				return nil
-			case 'n', 'r', 't':
+			case 'n', 'r', 't', '/', 'f', 'b':
 				return nil
 			default:
 				// nSlash must be even
