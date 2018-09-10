@@ -10,6 +10,14 @@
   revision = "941dea75d3ebfbdd905a5d8b7b232965c5e5c684"
 
 [[projects]]
+  digest = "1:e3b55611cb86797357cc1cd2b3d38faf07ae3c4079f04b32e84d497422ab0d60"
+  name = "github.com/coreos/go-systemd"
+  packages = ["journal"]
+  pruneopts = "UT"
+  revision = "39ca1b05acc7ad1220e09f133283b8859a8b71ab"
+  version = "v17"
+
+[[projects]]
   digest = "1:51d3c70fce5f054c5934988892eae7d660f421cf00394302192e3fd5a1565131"
   name = "github.com/francoispqt/gojay"
   packages = ["."]
@@ -66,24 +74,49 @@
   version = "v0.8.0"
 
 [[projects]]
+  digest = "1:2e76a73cb51f42d63a2a1a85b3dc5731fd4faf6821b434bd0ef2c099186031d6"
+  name = "github.com/rs/xid"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "15d26544def341f036c5f8dca987a4cbe575032c"
+  version = "v1.2.1"
+
+[[projects]]
   branch = "master"
-  digest = "1:391f75c99b42aeafa329b9c4ed7543051f290feda727664c44c71c00d07636cb"
+  digest = "1:b46060513eb4ae4820b554a105c2ff8058e69270f12cfaa4dfb22563545f44ce"
   name = "github.com/rs/zerolog"
   packages = [
     ".",
+    "diode",
+    "diode/internal/diodes",
+    "hlog",
     "internal/cbor",
     "internal/json",
+    "journald",
+    "log",
   ]
   pruneopts = "UT"
   revision = "b6f076edc801b110475cbf68da701e2bea52096a"
 
 [[projects]]
   branch = "master"
-  digest = "1:6f4a0e0449458db3a7f256d048278decb0ce9da40fe8123cd041983473da3234"
+  digest = "1:898ca51a0751fa7ceb594d8e7818cc12079f4a9daeee6bd1e3641d8b8d4c2d64"
   name = "github.com/sirupsen/logrus"
-  packages = ["."]
+  packages = [
+    ".",
+    "hooks/syslog",
+    "hooks/test",
+  ]
   pruneopts = "UT"
-  revision = "3791101e143bf0f32515ac23e831475684f61229"
+  revision = "f3df9aeffda7c12bd9f5a03f9251d75d35993165"
+
+[[projects]]
+  digest = "1:f23222558887a5919f8e9021ecb205395de463f031dd0c049e6e8e547b57c3f4"
+  name = "github.com/zenazn/goji"
+  packages = ["web/mutil"]
+  pruneopts = "UT"
+  revision = "64eb34159fe53473206c2b3e70fe396a639452f2"
+  version = "v1.0"
 
 [[projects]]
   digest = "1:3c1a69cdae3501bf75e76d0d86dc6f2b0a7421bc205c0cb7b96b19eed464a34d"
@@ -103,7 +136,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:c52caf7bd44f92e54627a31b85baf06a68333a196b3d8d241480a774733dcf8b"
+  digest = "1:1a48a306f348a6454fbe88c77c25430de7c3427c4081735d3223aa97c302c24f"
   name = "go.uber.org/zap"
   packages = [
     ".",
@@ -112,6 +145,7 @@
     "internal/color",
     "internal/exit",
     "zapcore",
+    "zapgrpc",
   ]
   pruneopts = "UT"
   revision = "67bc79d13d155c02fd008f721863ff8cc5f30659"
@@ -126,14 +160,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:0ed1788dc3845fa86e9ade2183538e920adf76fb9f8760e69236fa2cb0d7c9d9"
+  digest = "1:374fc90fcb026e9a367e3fad29e988e5dd944b68ca3f24a184d77abc5307dda4"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "UT"
-  revision = "917fdcba135dcbaccd57425db91723541b4427c8"
+  revision = "d0be0721c37eeb5299f245a996a483160fc36940"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -143,8 +177,16 @@
     "github.com/francoispqt/onelog",
     "github.com/inconshreveable/log15",
     "github.com/rs/zerolog",
+    "github.com/rs/zerolog/diode",
+    "github.com/rs/zerolog/hlog",
+    "github.com/rs/zerolog/journald",
+    "github.com/rs/zerolog/log",
     "github.com/sirupsen/logrus",
+    "github.com/sirupsen/logrus/hooks/syslog",
+    "github.com/sirupsen/logrus/hooks/test",
     "go.uber.org/zap",
+    "go.uber.org/zap/zapcore",
+    "go.uber.org/zap/zapgrpc",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
