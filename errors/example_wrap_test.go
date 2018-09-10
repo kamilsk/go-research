@@ -3,20 +3,20 @@ package errors
 import (
 	"bytes"
 	"errors"
-	"flag"
 	"fmt"
+	"go/build"
+	"path/filepath"
+	"runtime"
+	"strings"
 	"testing"
 
 	juju "github.com/juju/errors"
 	pkg "github.com/pkg/errors"
 )
 
-var showStackTrace = flag.Bool("sst", false, "print error stack trace")
-
 func Example_difference() {
-	origin := func() error { return errors.New("origin error") }
-
 	var err error
+	origin := func() error { return errors.New("origin error") }
 
 	message := "errors replacer"
 	err = juju.New(message) // has stack trace
@@ -39,23 +39,45 @@ func Example_difference() {
 	err = pkg.Wrap(origin(), message)
 
 	func() {
-		raw := [1024]byte{}
-		buf := bytes.NewBuffer(raw[:0])
-
+		buf := bytes.NewBuffer(nil)
 		err = func() error { return juju.Annotate(origin(), message) }()
-		fmt.Fprintf(buf, "github.com/juju/errors:\n%+v\n", err)
-		fmt.Fprintln(buf)
+		_, _ = fmt.Fprintf(buf, "github.com/juju/errors:\n%+v\n", err)
+		_, _ = fmt.Fprintln(buf)
 		err = func() error { return pkg.Wrap(origin(), message) }()
-		fmt.Fprintf(buf, "github.com/pkg/errors:\n%+v\n", err)
-
-		if *showStackTrace {
-			fmt.Println(buf.String())
-		}
+		_, _ = fmt.Fprintf(buf, "github.com/pkg/errors:\n%+v\n", err)
+		// sanitize buffer https://github.com/golang/go/issues/18831
+		result := buf.String()
+		result = strings.Replace(result, filepath.Join(build.Default.GOPATH, "src")+string(filepath.Separator), "", -1)
+		result = strings.Replace(result, filepath.Join(runtime.GOROOT(), "src")+string(filepath.Separator), "", -1)
+		_, _ = fmt.Println(result)
 	}()
 
-	message = "github.com/pkg/errors is my preferred choice"
-	fmt.Println(message)
-	// Output: github.com/pkg/errors is my preferred choice
+	// Output:
+	// github.com/juju/errors:
+	// origin error
+	// github.com/kamilsk/go-research/errors/example_wrap_test.go:43: with context and stack trace
+	//
+	// github.com/pkg/errors:
+	// origin error
+	// with context and stack trace
+	// github.com/kamilsk/go-research/errors.Example_difference.func2.2
+	// 	github.com/kamilsk/go-research/errors/example_wrap_test.go:46
+	// github.com/kamilsk/go-research/errors.Example_difference.func2
+	// 	github.com/kamilsk/go-research/errors/example_wrap_test.go:46
+	// github.com/kamilsk/go-research/errors.Example_difference
+	// 	github.com/kamilsk/go-research/errors/example_wrap_test.go:53
+	// testing.runExample
+	// 	testing/example.go:121
+	// testing.runExamples
+	// 	testing/example.go:45
+	// testing.(*M).Run
+	// 	testing/testing.go:1035
+	// main.main
+	// 	_testmain.go:50
+	// runtime.main
+	// 	runtime/proc.go:201
+	// runtime.goexit
+	// 	runtime/asm_amd64.s:1333
 }
 
 func Benchmark_New(b *testing.B) {
@@ -63,30 +85,29 @@ func Benchmark_New(b *testing.B) {
 	b.Run("github.com/juju/errors", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			juju.New(message)
+			_ = juju.New(message)
 		}
 	})
 	b.Run("github.com/pkg/errors", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			pkg.New(message)
+			_ = pkg.New(message)
 		}
 	})
 }
 
 func Benchmark_Wrap(b *testing.B) {
-	message := "with context and stack trace"
-	origin := errors.New("error")
+	origin, message := errors.New("error"), "with context and stack trace"
 	b.Run("github.com/juju/errors", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			juju.Annotate(origin, message)
+			_ = juju.Annotate(origin, message)
 		}
 	})
 	b.Run("github.com/pkg/errors", func(b *testing.B) {
 		b.ReportAllocs()
 		for i := 0; i < b.N; i++ {
-			pkg.Wrap(origin, message)
+			_ = pkg.Wrap(origin, message)
 		}
 	})
 }

@@ -10,14 +10,14 @@ import (
 )
 
 func Example_usage() {
+	var err error
 	origin := errors.New("origin")
 
-	var err error
-
 	func() {
-		defer grace.Recover(&err).Error() // without stack trace
+		defer grace.Recover(&err).Error()
 		panic(origin)
 	}()
+	_, _ = fmt.Println(err.Error())
 
 	if reflect.DeepEqual(origin, err) {
 		panic("unexpected equality")
@@ -25,41 +25,42 @@ func Example_usage() {
 	if !grace.Equal(origin, err) {
 		panic("equality is expected, but it is true only for `grace.Recover(&err).Error()`")
 	}
+	_, _ = fmt.Println("it is not possible to obtain original error")
 
-	fmt.Println("it is not possible to obtain original error")
-	// Output: it is not possible to obtain original error
+	// Output:
+	// origin
+	// it is not possible to obtain original error
 }
 
 func Benchmark_Recover(b *testing.B) {
-	var err error
 	text := "error"
 	b.Run("built-in recover", func(b *testing.B) {
 		b.ReportAllocs()
-		testCase := func() {
-			defer func() {
+		var err error
+		test := func() {
+			defer func(err *error) {
 				if r := recover(); r != nil {
 					switch e := (r).(type) {
 					case error:
-						err = e
+						*err = e
 					}
 				}
-			}()
+			}(&err)
 			panic(errors.New(text))
 		}
 		for i := 0; i < b.N; i++ {
-			testCase()
-			err = nil
+			test()
 		}
 	})
 	b.Run("github.com/oxequa/grace", func(b *testing.B) {
 		b.ReportAllocs()
-		testCase := func() {
+		var err error
+		test := func() {
 			defer grace.Recover(&err).Error()
 			panic(errors.New(text))
 		}
 		for i := 0; i < b.N; i++ {
-			testCase()
-			err = nil
+			test()
 		}
 	})
 }

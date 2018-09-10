@@ -17,7 +17,7 @@
 | No external deps | ✅          | ✅           |
 | Simplicity       | ❎          | ✅           |
 | Replace          |             |              |
-| - `errors`       | ✅          | ✅           |
+| - `errors.New`   | ✅          | ✅           |
 | - `fmt.Errorf`   | ✅          | ✅           |
 | Only context     | ❎          | ✅           |
 | Only stack trace | ❎          | ✅           |
