@@ -12,9 +12,9 @@
 
 ### Candidates
 
-- [github.com/sirupsen/logrus](https://github.com/Sirupsen/logrus/)
-- [go.uber.org/zap](https://github.com/uber-go/zap/)
-- [github.com/rs/zerolog](https://github.com/rs/zerolog/)
+- [github.com/sirupsen/logrus](https://github.com/Sirupsen/logrus)
+- [go.uber.org/zap](https://github.com/uber-go/zap)
+- [github.com/rs/zerolog](https://github.com/rs/zerolog)
 
 ### Summary
 
@@ -45,6 +45,6 @@
 
 ### Next iteration
 
-- [github.com/inconshreveable/log15](https://github.com/inconshreveable/log15/)
-- [github.com/apex/log](https://github.com/apex/log/)
-- [github.com/francoispqt/onelog](https://github.com/francoispqt/onelog/)
+- [github.com/inconshreveable/log15](https://github.com/inconshreveable/log15)
+- [github.com/apex/log](https://github.com/apex/log)
+- [github.com/francoispqt/onelog](https://github.com/francoispqt/onelog)

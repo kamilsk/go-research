@@ -10,8 +10,8 @@
 
 ### Candidates
 
-- [github.com/juju/errors](https://github.com/juju/errors/)
-- [github.com/pkg/errors](https://github.com/pkg/errors/)
+- [github.com/juju/errors](https://github.com/juju/errors)
+- [github.com/pkg/errors](https://github.com/pkg/errors)
 
 ### Summary
 
@@ -32,14 +32,14 @@
 
 ### Recommendation
 
-[github.com/juju/errors](https://github.com/juju/errors/) is more complex and rich,
-but [github.com/pkg/errors](https://github.com/pkg/errors/) is my preferred choice.
+[github.com/juju/errors](https://github.com/juju/errors) is more complex and rich,
+but [github.com/pkg/errors](https://github.com/pkg/errors) is my preferred choice.
 
 ## Panic handlers
 
 ### Candidates
 
-- [github.com/oxequa/grace](https://github.com/oxequa/grace/)
+- [github.com/oxequa/grace](https://github.com/oxequa/grace)
 
 ### Summary
 
@@ -54,6 +54,6 @@ but [github.com/pkg/errors](https://github.com/pkg/errors/) is my preferred choi
 
 ### Recommendation
 
-[github.com/oxequa/grace](https://github.com/oxequa/grace/) has some disadvantages,
+[github.com/oxequa/grace](https://github.com/oxequa/grace) has some disadvantages,
 for example, you cannot obtain the original error and by default the original error
 message is concatenated with stack trace without any new lines or spaces.
