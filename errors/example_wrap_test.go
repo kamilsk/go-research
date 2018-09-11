@@ -17,6 +17,7 @@ import (
 func Example_difference() {
 	var err error
 	origin := func() error { return errors.New("origin error") }
+	buf := bytes.NewBuffer(nil)
 
 	message := "errors replacer"
 	err = juju.New(message) // has stack trace
@@ -39,19 +40,18 @@ func Example_difference() {
 	err = pkg.Wrap(origin(), message)
 
 	func() {
-		buf := bytes.NewBuffer(nil)
 		err = func() error { return juju.Annotate(origin(), message) }()
 		_, _ = fmt.Fprintf(buf, "github.com/juju/errors:\n%+v\n", err)
 		_, _ = fmt.Fprintln(buf)
 		err = func() error { return pkg.Wrap(origin(), message) }()
 		_, _ = fmt.Fprintf(buf, "github.com/pkg/errors:\n%+v\n", err)
-		// sanitize buffer https://github.com/golang/go/issues/18831
-		result := buf.String()
-		result = strings.Replace(result, filepath.Join(build.Default.GOPATH, "src")+string(filepath.Separator), "", -1)
-		result = strings.Replace(result, filepath.Join(runtime.GOROOT(), "src")+string(filepath.Separator), "", -1)
-		_, _ = fmt.Println(result)
 	}()
 
+	// sanitize the result https://github.com/golang/go/issues/18831
+	result := buf.String()
+	result = strings.Replace(result, filepath.Join(build.Default.GOPATH, "src")+string(filepath.Separator), "", -1)
+	result = strings.Replace(result, filepath.Join(runtime.GOROOT(), "src")+string(filepath.Separator), "", -1)
+	_, _ = fmt.Println(result)
 	// Output:
 	// github.com/juju/errors:
 	// origin error
@@ -61,23 +61,23 @@ func Example_difference() {
 	// origin error
 	// with context and stack trace
 	// github.com/kamilsk/go-research/errors.Example_difference.func2.2
-	// 	github.com/kamilsk/go-research/errors/example_wrap_test.go:46
+	//	github.com/kamilsk/go-research/errors/example_wrap_test.go:46
 	// github.com/kamilsk/go-research/errors.Example_difference.func2
-	// 	github.com/kamilsk/go-research/errors/example_wrap_test.go:46
+	//	github.com/kamilsk/go-research/errors/example_wrap_test.go:46
 	// github.com/kamilsk/go-research/errors.Example_difference
-	// 	github.com/kamilsk/go-research/errors/example_wrap_test.go:53
+	//	github.com/kamilsk/go-research/errors/example_wrap_test.go:48
 	// testing.runExample
-	// 	testing/example.go:121
+	//	testing/example.go:121
 	// testing.runExamples
-	// 	testing/example.go:45
+	//	testing/example.go:45
 	// testing.(*M).Run
-	// 	testing/testing.go:1035
+	//	testing/testing.go:1035
 	// main.main
-	// 	_testmain.go:50
+	//	_testmain.go:50
 	// runtime.main
-	// 	runtime/proc.go:201
+	//	runtime/proc.go:201
 	// runtime.goexit
-	// 	runtime/asm_amd64.s:1333
+	//	runtime/asm_amd64.s:1333
 }
 
 func Benchmark_New(b *testing.B) {

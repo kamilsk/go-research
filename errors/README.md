@@ -2,6 +2,10 @@
 >
 > The research result.
 
+## Benchmarks
+
+- `make bench`
+
 ## Error wrappers
 
 ### Candidates
