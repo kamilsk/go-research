@@ -4,8 +4,10 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"log"
 	"regexp"
+	"testing"
 	"time"
 
 	"github.com/rs/zerolog"
@@ -129,4 +131,68 @@ func Example_zerologUsage() {
 	// Output:
 	// 0001-01-01T00:00:00Z |????| built-in logger uses github.com/rs/zerolog as writer
 	// 0001-01-01T00:00:00Z |ERROR| something happen logger=github.com/rs/zerolog
+}
+
+func Benchmark_Usage(b *testing.B) {
+	b.Run("github.com/sirupsen/logrus", func(b *testing.B) {
+		b.ReportAllocs()
+		logger := logrus.New()
+		logger.SetFormatter(&logrus.TextFormatter{})
+		logger.SetLevel(logrus.InfoLevel)
+		logger.SetOutput(ioutil.Discard)
+		for i := 0; i < b.N; i++ {
+			logger.WithFields(logrus.Fields{
+				"logger":  "github.com/sirupsen/logrus",
+				"error":   "context",
+				"package": "name",
+				"file":    "path",
+				"line":    "number",
+			}).Error("something happen")
+		}
+	})
+	b.Run("go.uber.org/zap", func(b *testing.B) {
+		b.ReportAllocs()
+		logger := zap.New(
+			zapcore.NewCore(
+				zapcore.NewConsoleEncoder(zapcore.EncoderConfig{
+					MessageKey:     "msg",
+					LevelKey:       "level",
+					TimeKey:        "time",
+					NameKey:        "logger",
+					CallerKey:      "caller",
+					StacktraceKey:  "stacktrace",
+					LineEnding:     zapcore.DefaultLineEnding,
+					EncodeLevel:    zapcore.LowercaseLevelEncoder,
+					EncodeTime:     zapcore.ISO8601TimeEncoder,
+					EncodeDuration: zapcore.SecondsDurationEncoder,
+					EncodeCaller:   zapcore.ShortCallerEncoder,
+				}),
+				zapcore.AddSync(ioutil.Discard),
+				zapcore.InfoLevel,
+			),
+		)
+		for i := 0; i < b.N; i++ {
+			logger.With(
+				zap.String("logger", "go.uber.org/zap"),
+				zap.String("error", "context"),
+				zap.String("package", "name"),
+				zap.String("file", "path"),
+				zap.String("line", "number"),
+			).Error("something happen")
+		}
+	})
+	b.Run("github.com/rs/zerolog", func(b *testing.B) {
+		b.ReportAllocs()
+		logger := zerolog.New(zerolog.ConsoleWriter{Out: ioutil.Discard}).With().Timestamp().Logger()
+		logger.Level(zerolog.InfoLevel)
+		for i := 0; i < b.N; i++ {
+			logger.Error().Fields(map[string]interface{}{
+				"logger":  "github.com/rs/zerolog",
+				"error":   "context",
+				"package": "name",
+				"file":    "path",
+				"line":    "number",
+			}).Msg("something happen")
+		}
+	})
 }

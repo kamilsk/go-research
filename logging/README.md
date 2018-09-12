@@ -12,39 +12,36 @@
 
 ### Candidates
 
-- [github.com/sirupsen/logrus](https://github.com/Sirupsen/logrus)
-- [go.uber.org/zap](https://github.com/uber-go/zap)
-- [github.com/rs/zerolog](https://github.com/rs/zerolog)
+- [github.com/sirupsen/logrus][logrus]
+- [go.uber.org/zap][zap]
+- [github.com/rs/zerolog][zerolog]
 
 ### Summary
 
-| Criteria         | github.com/sirupsen/logrus | go.uber.org/zap | github.com/rs/zerolog |
-|:-----------------|:--------------------------:|:---------------:|:---------------------:|
-| Liveliness       | ✅                         | ✅              | ✅                    |
-| No external deps | ❎                         | ❎              | ✅                    |
-| Simplicity       | ✅                         | ❎              | ❎                    |
-| Compatible       |                            |                 |                       |
-| - `log.Logger`   | ✅                         | ❎              | ❎                    |
-| - `io.Writer`    | ✅                         | ❎              | ✅                    |
-| Documentation    |                            |                 |                       |
-| - benchmarks     | ✅                         | ✅              | ✅                    |
-| - examples       | ✅                         | ❎              | ✅                    |
-| Features         |                            |                 |                       |
-| - formatter      | ✅                         | ✅              | ✅                    |
-| - levels         | ✅                         | ✅              | ✅                    |
-| - nesting        | ✅                         | ✅              | ✅                    |
-| - structured     | ✅                         | ✅              | ✅                    |
-| - timestamp      | ✅                         | ✅              | ✅                    |
-| License          | MIT                        | MIT             | MIT                   |
-| Score            | ⭐⭐⭐⭐                   | ⭐⭐⭐⭐         | ⭐⭐⭐                |
+| Criteria         | [github.com/sirupsen/logrus][logrus] | [go.uber.org/zap][zap] | [github.com/rs/zerolog][zerolog] |
+|:-----------------|:---------:|:--------:|:-------:|
+| Liveliness       | ✅        | ✅       | ✅      |
+| No external deps | ❎        | ❎       | ✅      |
+| Simplicity       | ✅        | ❎       | ❎      |
+| Substitution     |           |          |         |
+| - `log.Logger`   | ✅        | ❎       | ❎      |
+| - `io.Writer`    | ✅        | ❎       | ✅      |
+| Documentation    |           |          |         |
+| - benchmarks     | ✅        | ✅       | ✅      |
+| - examples       | ✅        | ❎       | ✅      |
+| Features         |           |          |         |
+| - formatter      | ✅        | ✅       | ✅      |
+| - levels         | ✅        | ✅       | ✅      |
+| - nesting        | ✅        | ✅       | ✅      |
+| - structured     | ✅        | ✅       | ✅      |
+| - timestamp      | ✅        | ✅       | ✅      |
+| License          | MIT       | MIT      | MIT     |
+| Score            | ⭐⭐⭐⭐  | ⭐⭐⭐⭐  | ⭐⭐⭐  |
 
 ### Recommendation
 
-- [ ] TODO need more criteria
-- [ ] TODO complete benchmarks for usual cases
+[go.uber.org/zap][zap] has good performance and flexible configuration.
 
-### Next iteration
-
-- [github.com/inconshreveable/log15](https://github.com/inconshreveable/log15)
-- [github.com/apex/log](https://github.com/apex/log)
-- [github.com/francoispqt/onelog](https://github.com/francoispqt/onelog)
+[logrus]:  https://github.com/sirupsen/logrus
+[zap]:     https://github.com/uber-go/zap
+[zerolog]: https://github.com/rs/zerolog
