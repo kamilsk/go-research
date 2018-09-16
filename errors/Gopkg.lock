@@ -3,27 +3,27 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:1261ccace00babbf02bb702e71c85c8e81f65bad7bdb98c12c7a409c14de1d86"
+  digest = "1:594030c0f0ed3842773b68708d4f9716d809556b9c631460051f99b15057512d"
   name = "github.com/juju/errors"
   packages = ["."]
-  pruneopts = "UT"
+  pruneopts = ""
   revision = "22422dad46e14561a0854ad42497a75af9b61909"
 
 [[projects]]
   branch = "master"
-  digest = "1:b62068b709d58371f73eff62973a8e658bc0bf89f8dd74b88be9b599944fb1ab"
+  digest = "1:34e4eb11520ec1680b30f656fe9b68ad9bd102ee43ffdb7653d740b45fee1163"
   name = "github.com/oxequa/grace"
   packages = ["."]
-  pruneopts = "UT"
+  pruneopts = ""
   revision = "d1b62e904ab270ccd87f64c9978dfeae73eae86d"
 
 [[projects]]
   branch = "master"
-  digest = "1:3891cc78541df6e4596b3e73978eb062d32967084069270ec881b959be5155ae"
+  digest = "1:4a28080faacdaabfe54a78ba0bfb41468744cbcda6af15748b917ca725d3749c"
   name = "github.com/pkg/errors"
   packages = ["."]
-  pruneopts = "UT"
-  revision = "816c9085562cd7ee03e7f8188a1cfd942858cded"
+  pruneopts = ""
+  revision = "c059e472caf75dbe73903f6521a20abac245b17f"
 
 [solve-meta]
   analyzer-name = "dep"

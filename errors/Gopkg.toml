@@ -12,4 +12,23 @@
 
 [prune]
   go-tests = true
+  non-go = true
   unused-packages = true
+
+[[prune.project]]
+  name = "github.com/juju/errors"
+  go-tests = false
+  non-go = false
+  unused-packages = false
+
+[[prune.project]]
+  name = "github.com/oxequa/grace"
+  go-tests = false
+  non-go = false
+  unused-packages = false
+
+[[prune.project]]
+  name = "github.com/pkg/errors"
+  go-tests = false
+  non-go = false
+  unused-packages = false
