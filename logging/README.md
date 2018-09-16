@@ -19,24 +19,24 @@
 ### Summary
 
 | Criteria         | [github.com/sirupsen/logrus][logrus] | [go.uber.org/zap][zap] | [github.com/rs/zerolog][zerolog] |
-|:-----------------|:---------:|:--------:|:-------:|
-| Liveliness       | ✅        | ✅       | ✅      |
-| No external deps | ❎        | ❎       | ✅      |
-| Simplicity       | ✅        | ❎       | ❎      |
-| Substitution     |           |          |         |
-| - `log.Logger`   | ✅        | ❎       | ❎      |
-| - `io.Writer`    | ✅        | ❎       | ✅      |
-| Documentation    |           |          |         |
-| - benchmarks     | ✅        | ✅       | ✅      |
-| - examples       | ✅        | ❎       | ✅      |
-| Features         |           |          |         |
-| - formatter      | ✅        | ✅       | ✅      |
-| - levels         | ✅        | ✅       | ✅      |
-| - nesting        | ✅        | ✅       | ✅      |
-| - structured     | ✅        | ✅       | ✅      |
-| - timestamp      | ✅        | ✅       | ✅      |
-| License          | MIT       | MIT      | MIT     |
-| Score            | ⭐⭐⭐⭐  | ⭐⭐⭐⭐  | ⭐⭐⭐  |
+|:-----------------|:---:|:---:|:---:|
+| Liveliness       | ✅ | ✅ | ✅ |
+| No external deps | ❎ | ❎ | ✅ |
+| Simplicity       | ✅ | ❎ | ❎ |
+| Substitution     |     |     |     |
+| - `log.Logger`   | ✅ | ❎ | ❎ |
+| - `io.Writer`    | ✅ | ❎ | ✅ |
+| Documentation    |     |     |     |
+| - benchmarks     | ✅ | ✅ | ✅ |
+| - examples       | ✅ | ❎ | ✅ |
+| Features         |     |     |     |
+| - formatter      | ✅ | ✅ | ✅ |
+| - levels         | ✅ | ✅ | ✅ |
+| - nesting        | ✅ | ✅ | ✅ |
+| - structured     | ✅ | ✅ | ✅ |
+| - timestamp      | ✅ | ✅ | ✅ |
+| License          | MIT | MIT | MIT |
+| Score            | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
 
 ### Recommendation
 
