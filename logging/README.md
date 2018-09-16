@@ -23,13 +23,13 @@
 | Liveliness       | ✅ | ✅ | ✅ |
 | No external deps | ❎ | ❎ | ✅ |
 | Simplicity       | ✅ | ❎ | ❎ |
-| Substitution     |     |     |     |
+| Substitution     |
 | - `log.Logger`   | ✅ | ❎ | ❎ |
 | - `io.Writer`    | ✅ | ❎ | ✅ |
-| Documentation    |     |     |     |
+| Documentation    |
 | - benchmarks     | ✅ | ✅ | ✅ |
 | - examples       | ✅ | ❎ | ✅ |
-| Features         |     |     |     |
+| Features         |
 | - formatter      | ✅ | ✅ | ✅ |
 | - levels         | ✅ | ✅ | ✅ |
 | - nesting        | ✅ | ✅ | ✅ |
