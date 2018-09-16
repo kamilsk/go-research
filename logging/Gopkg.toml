@@ -1,14 +1,17 @@
-[[constraint]]
-  name = "github.com/apex/log"
-  branch = "master"
-
-[[constraint]]
-  name = "github.com/francoispqt/onelog"
-  branch = "master"
-
-[[constraint]]
-  name = "github.com/inconshreveable/log15"
-  branch = "master"
+# TODO issue#2
+#
+#[[constraint]]
+#  name = "github.com/apex/log"
+#  branch = "master"
+#
+#[[constraint]]
+#  name = "github.com/francoispqt/onelog"
+#  branch = "master"
+#
+#[[constraint]]
+#  name = "github.com/inconshreveable/log15"
+#  branch = "master"
+#
 
 [[constraint]]
   name = "github.com/rs/zerolog"
@@ -24,4 +27,23 @@
 
 [prune]
   go-tests = true
+  non-go = true
   unused-packages = true
+
+[[prune.project]]
+  name = "github.com/rs/zerolog"
+  go-tests = false
+  non-go = false
+  unused-packages = false
+
+[[prune.project]]
+  name = "github.com/sirupsen/logrus"
+  go-tests = false
+  non-go = false
+  unused-packages = false
+
+[[prune.project]]
+  name = "go.uber.org/zap"
+  go-tests = false
+  non-go = false
+  unused-packages = false
