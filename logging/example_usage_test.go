@@ -110,7 +110,7 @@ func Example_zerologUsage() {
 	buf := bytes.NewBuffer(nil)
 
 	// instantiation and configuration
-	logger := zerolog.New(zerolog.ConsoleWriter{Out: buf}).With().Timestamp().Logger()
+	logger := zerolog.New(zerolog.ConsoleWriter{Out: buf, NoColor: true}).With().Timestamp().Logger()
 	logger.Level(zerolog.ErrorLevel)
 
 	// integration with built-in logger
