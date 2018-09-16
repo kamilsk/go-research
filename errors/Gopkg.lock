@@ -3,6 +3,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:aa860d0ffcbe31d9044e5c99704a100bd2926f5f19ee993f2f5b31511fc51b94"
+  name = "github.com/goph/emperror"
+  packages = ["."]
+  pruneopts = ""
+  revision = "46021f30f3a886c2e0c1f28196a98af438ba26fa"
+
+[[projects]]
+  branch = "master"
   digest = "1:594030c0f0ed3842773b68708d4f9716d809556b9c631460051f99b15057512d"
   name = "github.com/juju/errors"
   packages = ["."]
@@ -29,6 +37,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/goph/emperror",
     "github.com/juju/errors",
     "github.com/oxequa/grace",
     "github.com/pkg/errors",
