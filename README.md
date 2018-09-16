@@ -1,4 +1,4 @@
-> # Research
+> # 👨‍🔬 Research <img align="right" width="100" src=".github/character.png">
 >
 > My research work in Go.
 

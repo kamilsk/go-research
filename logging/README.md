@@ -18,7 +18,7 @@
 
 ### Summary
 
-| Criteria         | [github.com/sirupsen/logrus][logrus] | [go.uber.org/zap][zap] | [github.com/rs/zerolog][zerolog] |
+| Criteria         | [logrus][logrus] | [zap][zap] | [zerolog][zerolog] |
 |:-----------------|:---:|:---:|:---:|
 | Liveliness       | ✅ | ✅ | ✅ |
 | No external deps | ❎ | ❎ | ✅ |
