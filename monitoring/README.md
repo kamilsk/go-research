@@ -11,7 +11,7 @@
 
 ### Summary
 
-| Criteria         | [grmon][grmon] | [gops][gops] |
+| Criteria         | [grmon][] | [gops][] |
 |:-----------------|:---:|:---:|
 | Liveliness       | ❎ | ✅ |
 | No external deps | ✅ | ❎ |
