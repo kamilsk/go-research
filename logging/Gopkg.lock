@@ -11,7 +11,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:c84ac29b6b70823d47de26e011054e3995f6478806b8c57fcd8df310b24c0a55"
+  digest = "1:8df8bf0743bd632dcae85b2d9bc46d587146f39ca596d5e5c58d2ae2b165519e"
   name = "github.com/rs/zerolog"
   packages = [
     ".",
@@ -19,15 +19,15 @@
     "internal/json",
   ]
   pruneopts = ""
-  revision = "b6f076edc801b110475cbf68da701e2bea52096a"
+  revision = "338f9bc14084d22cb8eeacd6492861f8449d715c"
 
 [[projects]]
   branch = "master"
-  digest = "1:9bc911d212279c69ab45ed73abbbd6e6c85cff4bf7ab46ff616295631b76b63f"
+  digest = "1:077b79b1a3110c51010185254d8b433dc3cd1ccd760dddfe7373a317d1a4a30a"
   name = "github.com/sirupsen/logrus"
   packages = ["."]
   pruneopts = ""
-  revision = "d23a0f20d429b5da960216daca3b37e075cbdcd1"
+  revision = "33a1e118e113c7d1dd24a80f80670864cd598519"
 
 [[projects]]
   digest = "1:22f696cee54865fb8e9ff91df7b633f6b8f22037a8015253c6b6a71ca82219c7"
@@ -70,14 +70,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:581828cee9f0d31195c1ae52ea8935dfaec395cee6c23adc02109b892b391c2e"
+  digest = "1:d468ba3543e2daeb578caa65430a5ed88bd3cce35700e7e84d1b377c03b1f230"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
   pruneopts = "NUT"
-  revision = "d0be0721c37eeb5299f245a996a483160fc36940"
+  revision = "90868a75fefd03942536221d7c0e2f84ec62a668"
 
 [solve-meta]
   analyzer-name = "dep"

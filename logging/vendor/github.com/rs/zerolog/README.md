@@ -364,7 +364,7 @@ hooked.Warn().Msg("")
 ### Pass a sub-logger by context
 
 ```go
-ctx := log.With("component", "module").Logger().WithContext(ctx)
+ctx := log.With().Str("component", "module").Logger().WithContext(ctx)
 
 log.Ctx(ctx).Info().Msg("hello world")
 
@@ -491,6 +491,8 @@ with zerolog library is [CSD](https://github.com/toravir/csd/).
 * [grpc-zerolog](https://github.com/cheapRoc/grpc-zerolog): Implementation of `grpclog.LoggerV2` interface using `zerolog`
 
 ## Benchmarks
+
+See [logbench](http://hackemist.com/logbench/) for more comprehensive and up-to-date benchmarks.
 
 All operations are allocation free (those numbers *include* JSON encoding):
 

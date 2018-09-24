@@ -1,3 +1,5 @@
+.DEFAULT_GOAL = research
+
 .PHONY: bench
 bench:
 	go test -bench . -run skip ./...
@@ -6,5 +8,5 @@ bench:
 test:
 	go test -race -v ./...
 
-.PHONY: run
-run: test bench
+.PHONY: research
+research: test bench
