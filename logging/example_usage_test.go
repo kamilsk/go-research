@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"log"
 	"regexp"
+	"sync"
 	"testing"
 	"time"
 
@@ -35,6 +36,74 @@ var (
 
 	sanitizer = regexp.MustCompile(`\d{4}[-/]\d{2}[-/]\d{2}[T\s]\d{2}:\d{2}:\d{2}(?:(?:\.\d{3})?\+\d{2}:?\d{2})?`)
 )
+
+func TestRace(t *testing.T) {
+	tests := []struct {
+		name   string
+		writer func(starter <-chan struct{}) func(waiter *sync.WaitGroup, log string)
+	}{
+		{"github.com/sirupsen/logrus", func(starter <-chan struct{}) func(waiter *sync.WaitGroup, log string) {
+			logger := logrus.New()
+			logger.SetFormatter(&logrus.TextFormatter{})
+			logger.SetLevel(logrus.ErrorLevel)
+			logger.SetOutput(ioutil.Discard)
+			return func(waiter *sync.WaitGroup, log string) {
+				<-starter
+				logger.Error(log)
+				waiter.Done()
+			}
+		}},
+		{"go.uber.org/zap", func(starter <-chan struct{}) func(waiter *sync.WaitGroup, log string) {
+			logger := zap.New(
+				zapcore.NewCore(
+					zapcore.NewConsoleEncoder(zapcore.EncoderConfig{
+						MessageKey:     "msg",
+						LevelKey:       "level",
+						TimeKey:        "time",
+						NameKey:        "logger",
+						CallerKey:      "caller",
+						StacktraceKey:  "stacktrace",
+						LineEnding:     zapcore.DefaultLineEnding,
+						EncodeLevel:    zapcore.LowercaseLevelEncoder,
+						EncodeTime:     zapcore.ISO8601TimeEncoder,
+						EncodeDuration: zapcore.SecondsDurationEncoder,
+						EncodeCaller:   zapcore.ShortCallerEncoder,
+					}),
+					zapcore.AddSync(ioutil.Discard),
+					zapcore.ErrorLevel,
+				),
+			)
+			return func(waiter *sync.WaitGroup, log string) {
+				<-starter
+				logger.Error(log)
+				waiter.Done()
+			}
+		}},
+		{"github.com/rs/zerolog", func(starter <-chan struct{}) func(waiter *sync.WaitGroup, log string) {
+			logger := zerolog.New(zerolog.ConsoleWriter{Out: ioutil.Discard, NoColor: true}).With().Timestamp().Logger()
+			logger.Level(zerolog.ErrorLevel)
+			return func(waiter *sync.WaitGroup, log string) {
+				<-starter
+				logger.Error().Msg(log)
+				waiter.Done()
+			}
+		}},
+	}
+	for _, test := range tests {
+		tc := test
+		t.Run(test.name, func(t *testing.T) {
+			waiter := &sync.WaitGroup{}
+			starter := make(chan struct{})
+			writer := tc.writer(starter)
+			for i := 0; i < 100; i++ {
+				waiter.Add(1)
+				go writer(waiter, fmt.Sprintf("msg#%03d", i))
+			}
+			close(starter)
+			waiter.Wait()
+		})
+	}
+}
 
 func Example_logrusUsage() {
 	buf := bytes.NewBuffer(nil)
