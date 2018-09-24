@@ -18,7 +18,7 @@
 
 ### Summary
 
-| Criteria         | [logrus][logrus] | [zap][zap] | [zerolog][zerolog] |
+| Criteria         | [logrus][] | [zap][] | [zerolog][] |
 |:-----------------|:---:|:---:|:---:|
 | Liveliness       | ✅ | ✅ | ✅ |
 | No external deps | ❎ | ❎ | ✅ |
