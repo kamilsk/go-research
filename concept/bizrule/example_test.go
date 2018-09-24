@@ -1,6 +1,6 @@
 package bizrule_test
 
-import "github.com/kamilsk/go-kit/concept/bizrule"
+import "github.com/kamilsk/go-research/concept/bizrule"
 
 func Example() {
 	ctx := bizrule.NewContext()
