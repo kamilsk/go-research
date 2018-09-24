@@ -39,21 +39,28 @@ but [github.com/pkg/errors](https://github.com/pkg/errors) is my preferred choic
 
 ### Candidates
 
-- [github.com/oxequa/grace](https://github.com/oxequa/grace)
+- [github.com/goph/emperror][emperror]
+- [github.com/oxequa/grace][grace]
 
 ### Summary
 
-| Criterion        | oxequa/grace |
-|:-----------------|:------------:|
-| Liveliness       | ✅           |
-| No external deps | ✅           |
-| Simplicity       | ✅           |
-| Underlying error | ❎           |
-| License          | GPLv3        |
-| Score            | ⭐️⭐️⭐️ ️     |
+| Criterion        | [emperror][] |[grace][] |
+|:-----------------|:---:|:---:|
+| Liveliness       | ✅ | ✅ |
+| No external deps | ❎ | ✅ |
+| Simplicity       | ✅ | ✅ |
+| Underlying error | ✅ | ❎ |
+| License          | MIT | GPLv3 |
+| Score            | ⭐⭐⭐⭐ | ⭐⭐⭐ |
 
 ### Recommendation
 
-[github.com/oxequa/grace](https://github.com/oxequa/grace) has some disadvantages,
-for example, you cannot obtain the original error and by default the original error
-message is concatenated with stack trace without any new lines or spaces.
+[github.com/oxequa/grace][grace] has some disadvantages, for example, you cannot obtain the original error
+and by default the original error message is concatenated with stack trace without any new lines or spaces.
+
+[github.com/goph/emperror][emperror] is closest to my needs.
+
+[emperror]:    https://github.com/goph/emperror
+[juju/errors]: https://github.com/juju/errors
+[pkg/errors]:  https://github.com/pkg/errors
+[grace]:       https://github.com/oxequa/grace
