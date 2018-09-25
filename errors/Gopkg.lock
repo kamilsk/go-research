@@ -3,11 +3,11 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:aa860d0ffcbe31d9044e5c99704a100bd2926f5f19ee993f2f5b31511fc51b94"
+  digest = "1:5cd7d8c516f26e26a9ae6861444f17bb67d07c94de437b2d0812af4a3638a36c"
   name = "github.com/goph/emperror"
   packages = ["."]
   pruneopts = ""
-  revision = "46021f30f3a886c2e0c1f28196a98af438ba26fa"
+  revision = "9870ade6f413fe7fbddcb3eb8a735822deeef874"
 
 [[projects]]
   branch = "master"
