@@ -73,7 +73,7 @@ func Example_difference() {
 	// testing.(*M).Run
 	//	testing/testing.go:1035
 	// main.main
-	//	_testmain.go:50
+	//	_testmain.go:52
 	// runtime.main
 	//	runtime/proc.go:201
 	// runtime.goexit
