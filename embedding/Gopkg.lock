@@ -3,6 +3,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:e97c4d4d91f5a857bfa2fdaad18e51d9c2610b6d32721db8ab27cdb97bad23e3"
+  name = "github.com/benbjohnson/genesis"
+  packages = ["."]
+  pruneopts = ""
+  revision = "0187002be681aa58cc1ff834601777d21dc6490d"
+
+[[projects]]
+  branch = "master"
   digest = "1:5ed5a0d86bdcd307f5de29d23e778f8f4d64a61663fba899573ee8da2046a0b1"
   name = "github.com/go-bindata/go-bindata"
   packages = ["."]
@@ -37,6 +45,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/benbjohnson/genesis",
     "github.com/go-bindata/go-bindata",
     "github.com/gobuffalo/packr",
     "github.com/rakyll/statik/fs",

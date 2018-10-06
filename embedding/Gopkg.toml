@@ -1,8 +1,13 @@
 required = [
+  "github.com/benbjohnson/genesis",
   "github.com/go-bindata/go-bindata",
   "github.com/gobuffalo/packr",
   "github.com/rakyll/statik/fs",
 ]
+
+[[constraint]]
+  name = "github.com/benbjohnson/genesis"
+  branch = "master"
 
 [[constraint]]
   name = "github.com/go-bindata/go-bindata"
@@ -20,6 +25,12 @@ required = [
   go-tests = true
   non-go = true
   unused-packages = true
+
+[[prune.project]]
+  name = "github.com/benbjohnson/genesis"
+  go-tests = false
+  non-go = false
+  unused-packages = false
 
 [[prune.project]]
   name = "github.com/go-bindata/go-bindata"
