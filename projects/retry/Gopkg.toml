@@ -1,0 +1,142 @@
+required = [
+  "github.com/Rican7/retry",
+  "github.com/Songmu/retry",
+  "github.com/adamliesko/retry",
+  "github.com/ae6rt/retry",
+  "github.com/andrew-plunk/retry",
+  "github.com/aybabtme/untilitworks",
+  "github.com/azr/retry",
+  "github.com/bernos/go-retry",
+  "github.com/cenkalti/backoff",
+  "github.com/dgrijalva/retry",
+  "github.com/drichardson/retry",
+  "github.com/giantswarm/retry-go",
+  "github.com/gruntwork-io/terratest/modules/retry",
+  "github.com/juju/retry",
+  "github.com/lytics/retry",
+  "github.com/maraino/retry",
+  "github.com/matryer/try",
+  "github.com/percolate/retry",
+  "github.com/rafaeljesus/retry-go",
+  "github.com/rogpeppe/retry",
+  "github.com/sethgrid/pester",
+  "github.com/shafreeck/retry",
+  "github.com/ssgreg/repeat",
+  "github.com/technoweenie/httpretry",
+  "github.com/thedevsaddam/retry",
+  "gopkg.in/eapache/go-resiliency.v1/retrier",
+  "gopkg.in/h2non/gentleman-retry.v2",
+  "gopkg.in/retry.v1",
+]
+
+[[constraint]]
+  name = "github.com/Rican7/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/Songmu/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/adamliesko/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/ae6rt/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/andrew-plunk/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/aybabtme/untilitworks"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/azr/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/bernos/go-retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/cenkalti/backoff"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/dgrijalva/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/drichardson/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/giantswarm/retry-go"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/gruntwork-io/terratest"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/juju/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/lytics/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/maraino/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/matryer/try"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/percolate/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/rafaeljesus/retry-go"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/rogpeppe/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/sethgrid/pester"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/shafreeck/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/ssgreg/repeat"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/technoweenie/httpretry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/thedevsaddam/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "gopkg.in/eapache/go-resiliency.v1"
+  version = "v1"
+
+[[constraint]]
+  name = "gopkg.in/h2non/gentleman-retry.v2"
+  version = "v2"
+
+[[constraint]]
+  name = "gopkg.in/retry.v1"
+  version = "v1"
