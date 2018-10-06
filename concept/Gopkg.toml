@@ -1,0 +1,17 @@
+required = [
+]
+
+[[constraint]]
+  name = ""
+  branch = "master"
+
+[prune]
+  go-tests = true
+  non-go = true
+  unused-packages = true
+
+[[prune.project]]
+  name = ""
+  go-tests = false
+  non-go = false
+  unused-packages = false
