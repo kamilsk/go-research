@@ -1,0 +1,10 @@
+
+.vscode/*
+cmd/debug
+cmd/cmd
+cmd/testApp/testApp
+crm/testApp/debug
+.genDocs
+.tmp/*
+cmd/*
+debug.test

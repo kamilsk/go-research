@@ -1,0 +1,62 @@
+required = [
+  "github.com/gofrs/uuid",
+  "github.com/google/uuid",
+  "github.com/hashicorp/go-uuid",
+  "github.com/jakehl/goid",
+  "github.com/kevinburke/go.uuid",
+  "github.com/oklog/ulid",
+  "github.com/satori/go.uuid",
+  "github.com/segmentio/ksuid",
+  "gopkg.in/myesui/uuid.v1",
+]
+
+[[constraint]]
+  name = "github.com/gofrs/uuid"
+  branch = "master"
+
+  [constraint.metadata]
+  origin = "github.com/satori/go.uuid"
+  reason = "https://github.com/satori/go.uuid/issues/73"
+
+[[constraint]]
+  name = "github.com/google/uuid"
+  branch = "master"
+
+  [constraint.metadata]
+  mirror = "https://github.com/pborman/uuid"
+  status = "unsynced"
+
+[[constraint]]
+  name = "github.com/hashicorp/go-uuid"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/jakehl/goid"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/kevinburke/go.uuid"
+  branch = "master"
+
+  [constraint.metadata]
+  origin = "github.com/satori/go.uuid"
+  reason = "https://github.com/satori/go.uuid/issues/73"
+
+[[constraint]]
+  name = "github.com/oklog/ulid"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/satori/go.uuid"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/segmentio/ksuid"
+  branch = "master"
+
+[[constraint]]
+  name = "gopkg.in/myesui/uuid.v1"
+  version = "v1"
+
+  [constraint.metadata]
+  source = "https://github.com/myesui/uuid"
