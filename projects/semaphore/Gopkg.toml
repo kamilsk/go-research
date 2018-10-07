@@ -1,0 +1,112 @@
+required = [
+  "github.com/abiosoft/semaphore",
+  "github.com/andreyvit/sem",
+  "github.com/avezila/psem",
+  "github.com/bluele/go-semaphore",
+  "github.com/carlmjohnson/go-utils/semaphore",
+  "github.com/cognusion/semaphore",
+  "github.com/dexterous/semaphore",
+  "github.com/dropbox/godropbox/sync2",
+  "github.com/jsipprell/go-semaphore",
+  "github.com/marusama/semaphore",
+  "github.com/nicholasjackson/bench/semaphore",
+  "github.com/pivotal-golang/semaphore",
+  "github.com/seanjohnno/semaphore",
+  "github.com/spektroskop/semaphore",
+  "github.com/subchen/go-trylock",
+  "github.com/tarndt/sema",
+  "github.com/tj/go-sync/semaphore",
+  "github.com/tmthrgd/go-sem",
+  "github.com/toolkits/concurrent/semaphore",
+  "github.com/vada-ir/semaphore",
+  "golang.org/x/sync/semaphore",
+  "gopkg.in/eapache/go-resiliency.v1/semaphore",
+]
+
+[[constraint]]
+  name = "github.com/abiosoft/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/andreyvit/sem"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/avezila/psem"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/bluele/go-semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/carlmjohnson/go-utils"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/cognusion/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/dexterous/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/dropbox/godropbox"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/jsipprell/go-semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/marusama/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/nicholasjackson/bench"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/pivotal-golang/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/seanjohnno/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/spektroskop/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/subchen/go-trylock"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/tarndt/sema"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/tj/go-sync"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/tmthrgd/go-sem"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/toolkits/concurrent"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/vada-ir/semaphore"
+  branch = "master"
+
+[[constraint]]
+  name = "golang.org/x/sync"
+  branch = "master"
+
+[[constraint]]
+  name = "gopkg.in/eapache/go-resiliency.v1"
+  version = "v1"
