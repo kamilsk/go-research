@@ -20,32 +20,3 @@ required = [
 [[constraint]]
   name = "github.com/rakyll/statik"
   branch = "master"
-
-[prune]
-  go-tests = true
-  non-go = true
-  unused-packages = true
-
-[[prune.project]]
-  name = "github.com/benbjohnson/genesis"
-  go-tests = false
-  non-go = false
-  unused-packages = false
-
-[[prune.project]]
-  name = "github.com/go-bindata/go-bindata"
-  go-tests = false
-  non-go = false
-  unused-packages = false
-
-[[prune.project]]
-  name = "github.com/gobuffalo/packr"
-  go-tests = false
-  non-go = false
-  unused-packages = false
-
-[[prune.project]]
-  name = "github.com/rakyll/statik"
-  go-tests = false
-  non-go = false
-  unused-packages = false
