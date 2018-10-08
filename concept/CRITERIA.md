@@ -25,7 +25,7 @@
 | Simplicity       | ✅ | ❎ | ❎ |
 | License          | MIT | GPLv3 | BSD-2-Clause |
 
-### Score
+### Scores
 
 | Project | Score |
 |:--------|:-----:|
@@ -35,15 +35,15 @@
 
 ### Summary
 
-#### Why [x][]
+#### Why [not] [x][]
 
 Brief about motivation.
 
-#### Why not [y][]
+#### Why [not] [y][]
 
 Brief about motivation.
 
-#### Why not [z][]
+#### Why [not] [z][]
 
 Brief about motivation.
 

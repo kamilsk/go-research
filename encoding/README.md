@@ -28,7 +28,7 @@
 | Simplicity       | ✅ | ❎ | ❎ |
 | License          | MIT | GPLv3 | BSD-2-Clause |
 
-### Score
+### Scores
 
 | Project | Score |
 |:--------|:-----:|

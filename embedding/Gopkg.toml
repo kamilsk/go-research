@@ -1,9 +1,14 @@
 required = [
+  "github.com/UnnoTed/fileb0x/config",
   "github.com/benbjohnson/genesis",
   "github.com/go-bindata/go-bindata",
   "github.com/gobuffalo/packr",
   "github.com/rakyll/statik/fs",
 ]
+
+[[constraint]]
+  name = "github.com/UnnoTed/fileb0x"
+  branch = "master"
 
 [[constraint]]
   name = "github.com/benbjohnson/genesis"
@@ -12,6 +17,17 @@ required = [
 [[constraint]]
   name = "github.com/go-bindata/go-bindata"
   branch = "master"
+
+  [constraint.metadata]
+  origin = "github.com/jteeuwen/go-bindata"
+  reason = "origin is gone"
+  alt_01 = "github.com/shuLhan/go-bindata"
+  alt_02 = "github.com/tmthrgd/go-bindata"
+  alt_03 = "github.com/kevinburke/go-bindata"
+  alt_04 = "github.com/lestrrat-go/bindata"
+  alt_05 = "github.com/a-urth/go-bindata"
+
+  # root commit: /tree/2a84f0bab0a269d51340cbfdb8c117847681ace1
 
 [[constraint]]
   name = "github.com/gobuffalo/packr"

@@ -2,12 +2,52 @@
 
 
 [[projects]]
+  digest = "1:e4b30804a381d7603b8a344009987c1ba351c26043501b23b8c7ce21f0b67474"
+  name = "github.com/BurntSushi/toml"
+  packages = ["."]
+  pruneopts = ""
+  revision = "3012a1dbe2e4bd1391d42b32f0577cb7bbc7f005"
+  version = "v0.3.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:59ca3895f716dee339b52a9c54e5f0f4debbb0e8e38a7c6a4b034e8eeaf06a07"
+  name = "github.com/UnnoTed/fileb0x"
+  packages = [
+    "compression",
+    "config",
+    "custom",
+    "dir",
+    "file",
+    "updater",
+    "utils",
+  ]
+  pruneopts = ""
+  revision = "a14a9cea3d73f97f1c62dabf4b2fedebf20f92ba"
+
+[[projects]]
+  digest = "1:1f7c8d9d3401d33d7d2701f90bafe1e3a3e1780a4958de4a0433719445f0e931"
+  name = "github.com/airking05/termui"
+  packages = ["."]
+  pruneopts = ""
+  revision = "24acd523c756fd9728824cdfac66aad9d8982fb7"
+  version = "v2.2.0"
+
+[[projects]]
   branch = "master"
   digest = "1:e97c4d4d91f5a857bfa2fdaad18e51d9c2610b6d32721db8ab27cdb97bad23e3"
   name = "github.com/benbjohnson/genesis"
   packages = ["."]
   pruneopts = ""
   revision = "0187002be681aa58cc1ff834601777d21dc6490d"
+
+[[projects]]
+  digest = "1:d0cc4a5bd7f183727fa68f58cb969413aaf6cbb8824c36b4fdbd729a4e98c937"
+  name = "github.com/bmatcuk/doublestar"
+  packages = ["."]
+  pruneopts = ""
+  revision = "85a78806aa1b4707d1dbace9be592cf1ece91ab3"
+  version = "v1.1.1"
 
 [[projects]]
   branch = "master"
@@ -26,6 +66,46 @@
   revision = "5a2cbb54c4e7d482e3f518c56f1f86f133d5204f"
 
 [[projects]]
+  digest = "1:3aa5d39691ecd851b6fbc93946678c3c4b25b291c4026f10cd31d62d5354e87a"
+  name = "github.com/karrick/godirwalk"
+  packages = ["."]
+  pruneopts = ""
+  revision = "e404d5af9b9b543c7100f4bf3757c1c3b5399fa9"
+  version = "v1.7.3"
+
+[[projects]]
+  digest = "1:1516a9fcc70c63b45b5c753e84c8c74081676d44584a8014e96807c31aea9557"
+  name = "github.com/maruel/panicparse"
+  packages = ["stack"]
+  pruneopts = ""
+  revision = "785840568bdc7faa0dfb1cd6c643207f03271f64"
+  version = "v1.1.1"
+
+[[projects]]
+  digest = "1:82b912465c1da0668582a7d1117339c278e786c2536b3c3623029a0c7141c2d0"
+  name = "github.com/mattn/go-runewidth"
+  packages = ["."]
+  pruneopts = ""
+  revision = "ce7b0b5c7b45a81508558cd1dba6bb1e4ddb51bb"
+  version = "v0.0.3"
+
+[[projects]]
+  digest = "1:713b341855f1480e4baca1e7c5434e1d266441340685ecbde32d59bdc065fb3f"
+  name = "github.com/mitchellh/go-wordwrap"
+  packages = ["."]
+  pruneopts = ""
+  revision = "9e67c67572bc5dd02aef930e2b0ae3c02a4b5a5c"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:20a553eff588d7abe1f05addf5f57cdbaef1d0f992427a0099b7eb51274b79cf"
+  name = "github.com/nsf/termbox-go"
+  packages = ["."]
+  pruneopts = ""
+  revision = "b66b20ab708e289ff1eb3e218478302e6aec28ce"
+
+[[projects]]
   digest = "1:7365acd48986e205ccb8652cc746f09c8b7876030d53710ea6ef7d0bd0dcd7ca"
   name = "github.com/pkg/errors"
   packages = ["."]
@@ -41,10 +121,19 @@
   pruneopts = ""
   revision = "1355192d24db2566a83c3914e187e2a7e7679832"
 
+[[projects]]
+  digest = "1:f0620375dd1f6251d9973b5f2596228cc8042e887cd7f827e4220bc1ce8c30e2"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  pruneopts = ""
+  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
+  version = "v2.2.1"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/UnnoTed/fileb0x/config",
     "github.com/benbjohnson/genesis",
     "github.com/go-bindata/go-bindata",
     "github.com/gobuffalo/packr",
