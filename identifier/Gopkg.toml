@@ -5,7 +5,6 @@ required = [
   "github.com/jakehl/goid",
   "github.com/kevinburke/go.uuid",
   "github.com/oklog/ulid",
-  "github.com/satori/go.uuid",
   "github.com/segmentio/ksuid",
   "gopkg.in/myesui/uuid.v1",
 ]
@@ -23,7 +22,7 @@ required = [
   branch = "master"
 
   [constraint.metadata]
-  mirror = "https://github.com/pborman/uuid"
+  mirror = "github.com/pborman/uuid"
   status = "unsynced"
 
 [[constraint]]
@@ -44,10 +43,6 @@ required = [
 
 [[constraint]]
   name = "github.com/oklog/ulid"
-  branch = "master"
-
-[[constraint]]
-  name = "github.com/satori/go.uuid"
   branch = "master"
 
 [[constraint]]

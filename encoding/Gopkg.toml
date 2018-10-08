@@ -24,3 +24,6 @@ required = [
 [[constraint]]
   name = "gopkg.in/yaml.v2"
   version = "v2"
+
+  [constraint.metadata]
+  source = "https://github.com/go-yaml/yaml"

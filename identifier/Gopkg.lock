@@ -51,14 +51,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:d4fec58ef1540ef89350bf22c25e013a9f9f57de12180d9067a1e25a5925d99b"
-  name = "github.com/satori/go.uuid"
-  packages = ["."]
-  pruneopts = ""
-  revision = "36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
-
-[[projects]]
-  branch = "master"
   digest = "1:a604fe0eb9b3c0ec333cea9c8a6f689aef86b624b619b10b98253fc3d84e9ad1"
   name = "github.com/segmentio/ksuid"
   packages = ["."]
@@ -83,7 +75,6 @@
     "github.com/jakehl/goid",
     "github.com/kevinburke/go.uuid",
     "github.com/oklog/ulid",
-    "github.com/satori/go.uuid",
     "github.com/segmentio/ksuid",
     "gopkg.in/myesui/uuid.v1",
   ]

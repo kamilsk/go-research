@@ -10,7 +10,6 @@
 - [github.com/hashicorp/go-uuid][]
 - [github.com/jakehl/goid][]
 - [github.com/kevinburke/go.uuid][] 
-- [github.com/satori/go.uuid][]
 - [github.com/oklog/ulid][]
 - [github.com/segmentio/ksuid][]
 - [gopkg.in/myesui/uuid.v1][]
@@ -33,7 +32,7 @@
 | Simplicity       | ✅ | ❎ | ❎ |
 | License          | MIT | GPLv3 | BSD-2-Clause |
 
-### Score
+### Scores
 
 | Project | Score |
 |:--------|:-----:|
@@ -43,23 +42,26 @@
 
 ### Summary
 
-#### Why [x][]
+#### Why [not] [x][]
 
 Brief about motivation.
 
-#### Why not [y][]
+#### Why [not] [y][]
 
 Brief about motivation.
 
-#### Why not [z][]
+#### Why [not] [z][]
 
 Brief about motivation.
+
+[x]: https://github.com/kamilsk/go-research/tree/master/identifier#candidates
+[y]: https://github.com/kamilsk/go-research/tree/master/identifier#candidates
+[z]: https://github.com/kamilsk/go-research/tree/master/identifier#candidates
 
 [github.com/google/uuid]:        https://github.com/google/uuid/
 [github.com/hashicorp/go-uuid]:  https://github.com/hashicorp/go-uuid/
 [github.com/jakehl/goid]:        https://github.com/jakehl/goid/
 [github.com/kevinburke/go.uuid]: https://github.com/kevinburke/go.uuid/
-[github.com/satori/go.uuid]:     https://github.com/satori/go.uuid/
 [github.com/oklog/ulid]:         https://github.com/oklog/ulid/
 [github.com/segmentio/ksuid]:    https://github.com/segmentio/ksuid/
 [gopkg.in/myesui/uuid.v1]:       https://github.com/myesui/uuid/
