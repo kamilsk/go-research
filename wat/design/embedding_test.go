@@ -22,7 +22,7 @@ func (b UserBio) MarshalJSON() ([]byte, error) {
 }
 
 func ExampleCollision() {
-	marshal := func(v interface{}) []byte {
+	encode := func(v interface{}) []byte {
 		b, err := json.Marshal(v)
 		if err != nil {
 			panic(err)
@@ -30,13 +30,13 @@ func ExampleCollision() {
 		return b
 	}
 
-	fmt.Printf(`expected: {"name":"John"}; obtained: %s`+"\n", marshal(User{Name: "John"}))
-	fmt.Printf(`expected: {"gender":"male"}; obtained: %s`+"\n", marshal(UserBio{Gender: "male"}))
-	fmt.Printf(`expected: {"name":"John","Age":30}; obtained: %s`+"\n", marshal(struct {
+	fmt.Printf(`expected: {"name":"John"}; obtained: %s`+"\n", encode(User{Name: "John"}))
+	fmt.Printf(`expected: {"gender":"male"}; obtained: %s`+"\n", encode(UserBio{Gender: "male"}))
+	fmt.Printf(`expected: {"name":"John","Age":30}; obtained: %s`+"\n", encode(struct {
 		User
 		Age uint
 	}{User{Name: "John"}, 30}))
-	fmt.Printf(`expected: {"name":"John","gender":"male"}; obtained: %s`+"\n", marshal(struct {
+	fmt.Printf(`expected: {"name":"John","gender":"male"}; obtained: %s`+"\n", encode(struct {
 		User
 		UserBio
 	}{User{Name: "John"}, UserBio{Gender: "male"}}))
