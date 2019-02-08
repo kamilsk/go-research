@@ -1,11 +1,29 @@
 package strings
 
 import (
+	"bytes"
 	"fmt"
 	"reflect"
+	"strings"
 	"testing"
 	"unsafe"
 )
+
+func buildByBuilder(id string) string {
+	b, base := strings.Builder{}, "https://guard.octolab.net/api/v1/license/"
+	b.Grow(len(base) + len(id))
+	_, _ = b.WriteString(base)
+	_, _ = b.WriteString(id)
+	return b.String()
+}
+
+func buildByBuffer(id string) string {
+	b, base := bytes.Buffer{}, "https://guard.octolab.net/api/v1/license/"
+	b.Grow(len(base) + len(id))
+	_, _ = b.WriteString(base)
+	_, _ = b.WriteString(id)
+	return b.String()
+}
 
 func buildByConcat(id string) string {
 	return "https://guard.octolab.net/api/v1/license/" + id
@@ -14,7 +32,7 @@ func buildByConcat(id string) string {
 func buildByMask(id string) string {
 	base := []byte("https://guard.octolab.net/api/v1/license/00000000-0000-0000-0000-000000000000")
 	window := base[len(base)-len(id):]
-	copy(window, []byte(id))
+	_ = copy(window, []byte(id))
 	return string(base)
 }
 
@@ -28,14 +46,16 @@ func buildByUnsafe(id string) string {
 	data := *(*[77]byte)(unsafe.Pointer(hdr.Data))
 	hdr.Data = uintptr(unsafe.Pointer(&data))
 	window := data[len(data)-len(id):]
-	copy(window, id)
+	_ = copy(window, id)
 	return base
 }
 
-// BenchmarkBuild/build_by_concat-12         	 3000000	       471 ns/op	     800 B/op	      10 allocs/op
-// BenchmarkBuild/build_by_mask-12           	 1000000	      1028 ns/op	    2080 B/op	      30 allocs/op
-// BenchmarkBuild/build_by_print-12          	 1000000	      1337 ns/op	     960 B/op	      20 allocs/op
-// BenchmarkBuild/build_by_unsafe-12         	 5000000	       335 ns/op	     800 B/op	      10 allocs/op
+// BenchmarkBuild/build_by_builder-12         	 3000000	       421 ns/op	     800 B/op	      10 allocs/op
+// BenchmarkBuild/build_by_buffer-12          	 1000000	      1876 ns/op	    2720 B/op	      30 allocs/op
+// BenchmarkBuild/build_by_concat-12          	 3000000	       466 ns/op	     800 B/op	      10 allocs/op
+// BenchmarkBuild/build_by_mask-12            	 1000000	      1031 ns/op	    2080 B/op	      30 allocs/op
+// BenchmarkBuild/build_by_print-12           	 1000000	      1386 ns/op	     960 B/op	      20 allocs/op
+// BenchmarkBuild/build_by_unsafe-12          	 5000000	       337 ns/op	     800 B/op	      10 allocs/op
 // compare with https://gist.github.com/kamilsk/af63aa5bb6178d4e4aeef091bdf32696
 
 func BenchmarkBuild(b *testing.B) {
@@ -57,6 +77,8 @@ func BenchmarkBuild(b *testing.B) {
 		name      string
 		algorithm func(string) string
 	}{
+		{"build by builder", buildByBuilder},
+		{"build by buffer", buildByBuffer},
 		{"build by concat", buildByConcat},
 		{"build by mask", buildByMask},
 		{"build by print", buildByPrint},
