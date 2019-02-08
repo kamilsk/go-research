@@ -71,7 +71,6 @@ func BenchmarkBuild(b *testing.B) {
 		"bff662fd-95a6-4f60-92d9-a052bee6779c",
 		"838dc73f-983c-4cac-8690-252a4ea4bbaa",
 	}
-	var last string
 
 	benchmarks := []struct {
 		name      string
@@ -87,6 +86,7 @@ func BenchmarkBuild(b *testing.B) {
 	for _, bm := range benchmarks {
 		tc := bm
 		b.Run(bm.name, func(b *testing.B) {
+			var last string
 			b.ReportAllocs()
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
