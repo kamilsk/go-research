@@ -7,9 +7,11 @@ required = [
   "github.com/aybabtme/untilitworks",
   "github.com/azr/retry",
   "github.com/bernos/go-retry",
+  "github.com/carlescere/goback",
   "github.com/cenkalti/backoff",
   "github.com/dgrijalva/retry",
   "github.com/giantswarm/retry-go",
+  "github.com/gojektech/heimdall",
   "github.com/jpillora/backoff",
   "github.com/juju/retry",
   "github.com/lestrrat-go/backoff",
@@ -62,6 +64,10 @@ required = [
   branch = "master"
 
 [[constraint]]
+  name = "github.com/carlescere/goback"
+  branch = "master"
+
+[[constraint]]
   name = "github.com/cenkalti/backoff"
   branch = "master"
 
@@ -71,6 +77,10 @@ required = [
 
 [[constraint]]
   name = "github.com/giantswarm/retry-go"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/gojektech/heimdall"
   branch = "master"
 
 [[constraint]]

@@ -93,6 +93,14 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:109ec52ffabf9560dbe52b0be47a5bc00a7b288f8bf4708c8da5686e9bd20582"
+  name = "github.com/carlescere/goback"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "ebe10501f4c4682dd56f50a33dac8cb44f025109"
+
+[[projects]]
+  branch = "master"
   digest = "1:cdee563173093e5ae7ab2a19c298e0904129719e1919a3c532b7bb0c3398b818"
   name = "github.com/cenkalti/backoff"
   packages = ["."]
@@ -114,6 +122,14 @@
   packages = ["."]
   pruneopts = "NT"
   revision = "d78cea247d5e87d005ff7732f88bc52359afbe19"
+
+[[projects]]
+  branch = "master"
+  digest = "1:1569c31f05f085cd5da23c1f1765c0f5f201811e7e6e143ad7b48533a361ae18"
+  name = "github.com/gojektech/heimdall"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "ef69e0bb0cbf72e832303efe6362855811e8cc89"
 
 [[projects]]
   branch = "master"
@@ -334,9 +350,11 @@
     "github.com/aybabtme/untilitworks",
     "github.com/azr/retry",
     "github.com/bernos/go-retry",
+    "github.com/carlescere/goback",
     "github.com/cenkalti/backoff",
     "github.com/dgrijalva/retry",
     "github.com/giantswarm/retry-go",
+    "github.com/gojektech/heimdall",
     "github.com/jpillora/backoff",
     "github.com/juju/retry",
     "github.com/lestrrat-go/backoff",
