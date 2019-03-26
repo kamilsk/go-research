@@ -140,3 +140,8 @@ required = [
 [[constraint]]
   name = "gopkg.in/retry.v1"
   version = "v1"
+
+[prune]
+  unused-packages = false
+  non-go = false
+  go-tests = false

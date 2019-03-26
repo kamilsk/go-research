@@ -110,3 +110,8 @@ required = [
 [[constraint]]
   name = "gopkg.in/eapache/go-resiliency.v1"
   version = "v1"
+
+[prune]
+  unused-packages = false
+  non-go = false
+  go-tests = false
