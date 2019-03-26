@@ -9,10 +9,10 @@ required = [
   "github.com/bernos/go-retry",
   "github.com/cenkalti/backoff",
   "github.com/dgrijalva/retry",
-  "github.com/drichardson/retry",
   "github.com/giantswarm/retry-go",
-  "github.com/gruntwork-io/terratest/modules/retry",
+  "github.com/jpillora/backoff",
   "github.com/juju/retry",
+  "github.com/lestrrat-go/backoff",
   "github.com/lytics/retry",
   "github.com/maraino/retry",
   "github.com/matryer/try",
@@ -70,19 +70,19 @@ required = [
   branch = "master"
 
 [[constraint]]
-  name = "github.com/drichardson/retry"
-  branch = "master"
-
-[[constraint]]
   name = "github.com/giantswarm/retry-go"
   branch = "master"
 
 [[constraint]]
-  name = "github.com/gruntwork-io/terratest"
+  name = "github.com/jpillora/backoff"
   branch = "master"
 
 [[constraint]]
   name = "github.com/juju/retry"
+  branch = "master"
+
+[[constraint]]
+  name = "github.com/lestrrat-go/backoff"
   branch = "master"
 
 [[constraint]]
@@ -142,6 +142,5 @@ required = [
   version = "v1"
 
 [prune]
-  unused-packages = false
-  non-go = false
-  go-tests = false
+  non-go = true
+  go-tests = true

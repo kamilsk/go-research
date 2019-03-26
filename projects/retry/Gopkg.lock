@@ -3,7 +3,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:6b8ca9304cac10c27be41b169ac9272dd1e83f1be978169ae7946cfa6f20801c"
+  digest = "1:ad84b053d0cef5db6c93ec577184de69a09c08481b84a087847001ba8aba795a"
   name = "github.com/Rican7/retry"
   packages = [
     ".",
@@ -11,44 +11,44 @@
     "jitter",
     "strategy",
   ]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "272ad122d6e5ce1be757544007cf8bcd1c9c9ab0"
 
 [[projects]]
-  digest = "1:01d968ff6535945510c944983eee024e81f1c949043e9bbfe5ab206ebc3588a4"
+  digest = "1:c8a0dfc6208c2af75549dbd7a0c4446cc214b7a049a872858a8ec6f58e4fd082"
   name = "github.com/Sirupsen/logrus"
   packages = ["."]
-  pruneopts = ""
-  revision = "a67f783a3814b8729bd2dac5780b5f78f8dbd64d"
-  version = "v1.1.0"
+  pruneopts = "NT"
+  revision = "dae0fa8d5b0c810a8ab733fbd5510c7cae84eca4"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
-  digest = "1:8b6244c64f996118fe30d53e9b324c185f938d437b72ddb25da05c0083485806"
+  digest = "1:1587b2db17a047e69ca693fdd42bdcfa76d33177a9489e7df6b18915c18c322a"
   name = "github.com/Songmu/retry"
   packages = ["."]
-  pruneopts = ""
-  revision = "d7e964d5c8b61a8b9e8f3b017b9d805a2106ac01"
+  pruneopts = "NT"
+  revision = "902aa877ec14b4d10b9db5c8caf81a111cf0680e"
 
 [[projects]]
   branch = "master"
-  digest = "1:90944ab5f0b6ae7520c1ceb3a9252767733a8fb4cb0e51fac3233eb2f64c0336"
+  digest = "1:8db4bc72b43dc146367fcf5bcfbf24e2f50742784806090f9ec2eb954768fc72"
   name = "github.com/adamliesko/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "d9468c78463fdc38138e43b75ee4050c078831d9"
 
 [[projects]]
   branch = "master"
-  digest = "1:bde783ca63a14bbf567fad88915ed82d014f635c77b1e77ee588972d1abd8be8"
+  digest = "1:6f52b30ec39f0f67308238b1d2b726ee3df7acc2d188d2f9161ed8ae5f8bd746"
   name = "github.com/ae6rt/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "340ac281720ed4c20c7b1093d9a80618c53177eb"
 
 [[projects]]
   branch = "master"
-  digest = "1:d80ad184956031ce144e6640fd276088d71acdfce279108e427076291119db42"
+  digest = "1:dde749c8b3333880791a29ac907e5ae59a6acb61001e7f8e2e35636965f00efb"
   name = "github.com/andrew-plunk/retry"
   packages = [
     ".",
@@ -56,272 +56,269 @@
     "jitter",
     "strategy",
   ]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "ac83025292c86177c19a7bf633ab51d9a9a73b25"
 
 [[projects]]
-  digest = "1:71c557dce3797895aab7a66b33c6c2c0fd3893cf18f1739abaad1cef8398a009"
+  digest = "1:5dea725d55e0ab0f9203c45d8fde063fa3106d5142bbf7c001fe432712da83f6"
   name = "github.com/ansel1/merry"
   packages = ["."]
-  pruneopts = ""
-  revision = "5429a08c10ad44bc57a5dbbf49fd44a6371fb167"
-  version = "v1.3.1"
+  pruneopts = "NT"
+  revision = "4db5a8dcd6e777f88c88819528382e5b1490a1ba"
+  version = "v1.4.0"
 
 [[projects]]
   branch = "master"
-  digest = "1:e47ee1c88df34df2362b9d35a5db91b998c8950a84752d62200d9f36cfde91ac"
+  digest = "1:046bf9b1ad0b9790c7a4685994a20fcc6935b45db22e2b1657d1461706eecb28"
   name = "github.com/aybabtme/untilitworks"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "dcfb49bb642dd528a2cc2c3c73c0240bd41b3aa8"
 
 [[projects]]
   branch = "master"
-  digest = "1:24ed46c4b3a4416616ef37fd17a3d483bebe13827353e11eb36dcca39214cedf"
+  digest = "1:3aaaab4e251417942e4ec22234b78aab622b50c1fc8a1ef2847ed471e59765ee"
   name = "github.com/azr/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "bc31a2c8cf29dc469f63fc61a545763c39007c6e"
 
 [[projects]]
   branch = "master"
-  digest = "1:2fc44abb7f2cf0dfc4d107f7e88cc8edd50d839d4ba01f0f424a541cfbc8253a"
+  digest = "1:6b4963877af7238deccb778aca8d59230d24190c44cd115897a0098b72c02f92"
   name = "github.com/bernos/go-retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "5c5b1f97512c9dc2406b2c77edc1284eb63847eb"
 
 [[projects]]
   branch = "master"
-  digest = "1:27a0ba2be705618c3a7015ad9641635c1c4a552175576149d57bb9cf71cb0513"
+  digest = "1:cdee563173093e5ae7ab2a19c298e0904129719e1919a3c532b7bb0c3398b818"
   name = "github.com/cenkalti/backoff"
   packages = ["."]
-  pruneopts = ""
-  revision = "62661b46c4093e2c1f38d943e663db1a29873e80"
+  pruneopts = "NT"
+  revision = "1e4cf3da559842a91afcb6ea6141451e6c30c618"
 
 [[projects]]
   branch = "master"
-  digest = "1:77135f48c580cce88d30dc9c37e808551e9d66ef973ea0ce577a5bb01ddea656"
+  digest = "1:3d526c7e84c8ebcd99fc705e161462c04dc37ae2bb0d2f2d7228b4b28b25a11c"
   name = "github.com/dgrijalva/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "ef012c8afd3f69ebcf28859766d025a9802ab575"
 
 [[projects]]
   branch = "master"
-  digest = "1:f6802bfe53737e8d255e73cb3507f3433f718f1f92c3654448d884331ace6b84"
-  name = "github.com/drichardson/retry"
-  packages = ["."]
-  pruneopts = ""
-  revision = "30dabe13157e4a166adc0af4bd23f2f8e54f5cf2"
-
-[[projects]]
-  branch = "master"
-  digest = "1:caa2a1d4e805c3894314e659ef1b8ef1b17433bb858771ce4297659315367ded"
+  digest = "1:18503a69dfc62c67dbeb34e3eaf67d5a8a78b581c713abea2d62a53e10695381"
   name = "github.com/giantswarm/retry-go"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "d78cea247d5e87d005ff7732f88bc52359afbe19"
 
 [[projects]]
   branch = "master"
-  digest = "1:87483867d63a4cf71d856bcc0572a81001d51185962aa6d7096cf7f34c90346e"
-  name = "github.com/gruntwork-io/terratest"
-  packages = [
-    "modules/logger",
-    "modules/retry",
-  ]
-  pruneopts = ""
-  revision = "66f4aa69016ca3ded6e5e7fcb93037626b277f29"
+  digest = "1:1037fdebde013214d6a67e4db00673f135747c7889d157e98ace721340194ee8"
+  name = "github.com/jpillora/backoff"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "3050d21c67d7c46b07ca1b5e1be0b26669c8d04c"
 
 [[projects]]
   branch = "master"
-  digest = "1:6a3c12156fd310ad95e3fe38070b1bf74e123552e374f1a57a188682a96d168e"
+  digest = "1:32c51d6ce84b400539a13575d0023d3d254aacca98e2e09cd512fa9a40a44181"
   name = "github.com/juju/errgo"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "08cceb5d0b5331634b9826762a8fd53b29b86ad8"
 
 [[projects]]
   branch = "master"
-  digest = "1:594030c0f0ed3842773b68708d4f9716d809556b9c631460051f99b15057512d"
+  digest = "1:9c83139d1b88efd3e44b326d4863c89980969644f21e6c1eef9bfa6415ae38dd"
   name = "github.com/juju/errors"
   packages = ["."]
-  pruneopts = ""
-  revision = "22422dad46e14561a0854ad42497a75af9b61909"
+  pruneopts = "NT"
+  revision = "e65537c515d77e35697c471d6c2755375cb3adc4"
 
 [[projects]]
   branch = "master"
-  digest = "1:2876394b554fd2ea3a68d6585c529817b76a7e3c3c5e0f23e7bf93b6f9956bb8"
+  digest = "1:870e5c4590e652329b39c44a8153c2768b2316926cb6d14c079b0533333174c9"
   name = "github.com/juju/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "9058e192b216b21e4741c2eeb20ac798ba1ea80a"
 
 [[projects]]
   branch = "027-add-ciphersuite-1.25"
-  digest = "1:b216abcce81ed7a3b247117c28f1d0923fa993d4a7427313bdb18b65ce9d3fdc"
+  digest = "1:c1dcc6c3dcefb2dee73c2605327d179002689df51f8cbf3999f30594a78354cf"
   name = "github.com/juju/utils"
   packages = ["clock"]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "7f0d35707c87a7b662a06c98fb8d5be920f30ce7"
 
 [[projects]]
-  digest = "1:6a874e3ddfb9db2b42bd8c85b6875407c702fa868eed20634ff489bc896ccfd3"
+  digest = "1:58999a98719fddbac6303cb17e8d85b945f60b72f48e3a2df6b950b97fa926f1"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
-  pruneopts = ""
-  revision = "5c8c8bd35d3832f5d134ae1e1e375b69a4d25242"
-  version = "v1.0.1"
+  pruneopts = "NT"
+  revision = "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e"
+  version = "v1.0.2"
 
 [[projects]]
   branch = "master"
-  digest = "1:e4163b15658bb3da52b448d7cfbf0c9aeb4d47f104b751e63b11f7464b2b02ba"
+  digest = "1:63cbd270f64b72d49029bfd7111746cb56ebfc822f4587dabc73b8de873b1530"
+  name = "github.com/lestrrat-go/backoff"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "0bc2a4274cd0f8baa49f2d598df5ef0cc3069c80"
+
+[[projects]]
+  branch = "master"
+  digest = "1:9d94143b139c7aa2460c755de6d20cd5f9603af7e1e7dd677fd57132ffe340e3"
   name = "github.com/lytics/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "0757f0de03bfc61150e24a6619d87c4cd14e45e4"
 
 [[projects]]
   branch = "master"
-  digest = "1:e417c69008a3a3e9bb11d901f01ce290e56fec1a0d075b5fce048eb8b5869537"
+  digest = "1:49cc2e45851992f8f1f11360041a80050b21592b39cd149ba53ec89bf59ce30f"
   name = "github.com/maraino/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "76512d8dad9ed70886f40b940c1756a818af7fb6"
 
 [[projects]]
   branch = "master"
-  digest = "1:cac8e7e6b723a717dfe6ce9e44750fc1800ccbe94916f9fe3d7c7d6713a903db"
+  digest = "1:82808e1d018364038cea3930c309363dcdff873ab19868e881111199b138b973"
   name = "github.com/matryer/try"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "9ac251b645a2628ef89dbd2986987cc1299408ff"
 
 [[projects]]
   branch = "master"
-  digest = "1:89bbc6593a29b7722968fe5ee006ae6ab15631ff2da40bee36d8ae0fb8beb250"
+  digest = "1:9f0d1a5eee88641c6debeb12a438f5538c2c904dec326dc40c1a455f1465676f"
   name = "github.com/percolate/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "7f9c39c9cd35aae12feab5a161ef55edfd5e192f"
 
 [[projects]]
+  digest = "1:14715f705ff5dfe0ffd6571d7d201dd8e921030f8070321a79380d8ca4ec1a24"
+  name = "github.com/pkg/errors"
+  packages = ["."]
+  pruneopts = "NT"
+  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
+  version = "v0.8.1"
+
+[[projects]]
   branch = "master"
-  digest = "1:7746754638136181a6474cf893f21eabc2b20322ea13ba77a5d7fd8f5ee6329f"
+  digest = "1:c057d1c53f600681ad75747c3ecf395945f7a63bdcc87d68b3752b1790363af6"
   name = "github.com/rafaeljesus/retry-go"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "5981a380a87925ee03a78a7ff13574fabc804837"
 
 [[projects]]
   branch = "master"
-  digest = "1:65234763d857a9273b741aac26ee042c04284c489807b8f6821f345c27379a7a"
+  digest = "1:e7c6b5234c231726adf9de1a6db6b898ce79e7b0114c660406f376514133c0f7"
   name = "github.com/rogpeppe/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "feb1263b8bc9e4144204ee91edbe471750bf4b42"
 
 [[projects]]
   branch = "master"
-  digest = "1:8b765bac58049f0c54c1fadb0b011bce1adc986506264c9d498cb27dd32679f4"
+  digest = "1:0d910d09333e0568fa80895f2900b94a8c0f26a59d9f4ef64c1dc23938878f59"
   name = "github.com/sethgrid/pester"
   packages = ["."]
-  pruneopts = ""
-  revision = "03e26c9abbbf5accb8349790bf9f41bde09d72c3"
+  pruneopts = "NT"
+  revision = "68a33a018ad0ac8266f272ec669307a1829c0486"
 
 [[projects]]
   branch = "master"
-  digest = "1:84b9bd8461aea9160b976674e042f7f5c4fbf773ece9a8ab415047d0ef09aa5f"
+  digest = "1:49cc7bda46e0217e638bcbcf97f14a4ef7109bf28cb4a78ec420d5c47cdc75a7"
   name = "github.com/shafreeck/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "71c8c3fbf8f88ee208f7673a445372d452476c42"
 
 [[projects]]
   branch = "master"
-  digest = "1:a4c2475870513791a36901e2f1418e77626eedcaca0598abcf19e4d138a42cc6"
+  digest = "1:cde54ea9aadcacbb2041826a4edea373c0c4119d25a0229ae8abad7bef89ac98"
   name = "github.com/ssgreg/repeat"
   packages = ["."]
-  pruneopts = ""
-  revision = "fc8e8f629875f1d5a254f582c228a2bdf78ef3b2"
+  pruneopts = "NT"
+  revision = "69bb4cbe28e8010286948fd385106ac599fdfca7"
 
 [[projects]]
   branch = "master"
-  digest = "1:0dbefc44cb3c025092fcd5c0befb7516784736a002d821d96f4975e9768ae2a1"
+  digest = "1:860a607590c9b06f49a6077ccd966070e607f87730c16f1437026fe3877ba594"
   name = "github.com/technoweenie/httpretry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "8b5e81f44aedb09f45acce2a60b367f1ac5a27cb"
 
 [[projects]]
   branch = "master"
-  digest = "1:c2598c7556f97ffe8a45302114e73442c43e09fffae2ff9d68bcba474634ec52"
+  digest = "1:5c354e1ac0fe374eae1497aa8174e6a2f6fb7d9fda1dc992fff4cc26899d37cc"
   name = "github.com/thedevsaddam/retry"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "ef6567c54abe765a8b2d17d1f10245b1179932d7"
 
 [[projects]]
   branch = "master"
-  digest = "1:6914c49eed986dfb8dffb33516fa129c49929d4d873f41e073c83c11c372b870"
+  digest = "1:2c0b9b49d155596fecc071bce8db372c193f638265c11ab24914aae99fcfa704"
   name = "golang.org/x/crypto"
   packages = ["ssh/terminal"]
-  pruneopts = ""
-  revision = "e3636079e1a4c1f337f212cc5cd2aca108f6c900"
+  pruneopts = "NT"
+  revision = "a5d413f7728c81fb97d96a2b722368945f651e78"
 
 [[projects]]
   branch = "master"
-  digest = "1:3a3c1b660248c0ec25f00cfb9c6526bd5b0ede4c8bfa2ed56a3f5e7e9d0a19cd"
-  name = "golang.org/x/net"
-  packages = ["context"]
-  pruneopts = ""
-  revision = "146acd28ed5894421fb5aac80ca93bc1b1f46f87"
-
-[[projects]]
-  branch = "master"
-  digest = "1:a4bda6e065eb3ccf1e6adeaa863cb416e0ae6b43e613f20a8931d52d19dc20e2"
+  digest = "1:9d531f81319846d063202616c0dd87bbf03b7f15c23136cba085b2b79432b4ec"
   name = "golang.org/x/sys"
   packages = [
     "unix",
     "windows",
   ]
-  pruneopts = ""
-  revision = "4497e2df6f9e69048a54498c7affbbec3294ad47"
+  pruneopts = "NT"
+  revision = "f49334f85ddcf0f08d7fb6dd7363e9e6d6b777eb"
 
 [[projects]]
-  digest = "1:6d6672f85a84411509885eaa32f597577873de00e30729b9bb0eb1e1faa49c12"
+  digest = "1:10fc3c47c44c6c689df5003224dda60080542ffad59c5d88f8e87c3d410ec3eb"
   name = "gopkg.in/eapache/go-resiliency.v1"
   packages = ["retrier"]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "ea41b0fad31007accc7f806884dcdf3da98b79ce"
   version = "v1.1.0"
 
 [[projects]]
-  digest = "1:eed3795975e6472b926238ddcd2dc2dab19631b41ac46e932713e8e042426133"
+  digest = "1:af59f29e55cb633ba6f9b0289cdf853f54d52185aec80cfffaf9616840818ddb"
   name = "gopkg.in/h2non/gentleman-retry.v2"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "6533f0ca1f2fc9f7862fb4efcdd3364e1f2f22ae"
   version = "v2.0.1"
 
 [[projects]]
-  digest = "1:e3250d192192f02fbb143d50de437cbe967d6be7bd9fad671600942a33269d08"
+  digest = "1:a139f56e582fa5f18eb9249d8e06898d10a219ea2f1ff586950f6ca019a2b66f"
   name = "gopkg.in/h2non/gentleman.v2"
   packages = [
     "context",
     "plugin",
     "utils",
   ]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "e0f81be2f4064ea7aa7470e9daddd2dc8e8152c7"
   version = "v2.0.3"
 
 [[projects]]
-  digest = "1:403dac309fe1f559300ee1be661063da2db59514a5fd8a552b8495725d6cf92f"
+  digest = "1:549758ea88183f369073cfaeaa3870c1d40ba14af8c60b50f5012883b0f23ea3"
   name = "gopkg.in/retry.v1"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "87155f248cf6ea9e38ae7613f9ea1e5bb397ac83"
   version = "v1.0.2"
 
@@ -339,10 +336,10 @@
     "github.com/bernos/go-retry",
     "github.com/cenkalti/backoff",
     "github.com/dgrijalva/retry",
-    "github.com/drichardson/retry",
     "github.com/giantswarm/retry-go",
-    "github.com/gruntwork-io/terratest/modules/retry",
+    "github.com/jpillora/backoff",
     "github.com/juju/retry",
+    "github.com/lestrrat-go/backoff",
     "github.com/lytics/retry",
     "github.com/maraino/retry",
     "github.com/matryer/try",
