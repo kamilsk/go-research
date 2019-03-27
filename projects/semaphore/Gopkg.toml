@@ -16,7 +16,6 @@ required = [
   "github.com/subchen/go-trylock",
   "github.com/tarndt/sema",
   "github.com/tj/go-sync/semaphore",
-  "github.com/tmthrgd/go-sem",
   "github.com/toolkits/concurrent/semaphore",
   "github.com/vada-ir/semaphore",
   "golang.org/x/sync/semaphore",
@@ -89,10 +88,6 @@ required = [
 
 [[constraint]]
   name = "github.com/tj/go-sync"
-  branch = "master"
-
-[[constraint]]
-  name = "github.com/tmthrgd/go-sem"
   branch = "master"
 
 [[constraint]]

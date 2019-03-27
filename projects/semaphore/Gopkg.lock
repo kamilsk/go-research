@@ -142,14 +142,6 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:c912c6ad252d2f77f19b64f66d1696845952475f52df5271597585e0d03c8062"
-  name = "github.com/tmthrgd/go-sem"
-  packages = ["."]
-  pruneopts = "NT"
-  revision = "0214dbf5387720b1ff35c31913423f4d1fbde077"
-
-[[projects]]
-  branch = "master"
   digest = "1:02a851bc2db5f334a43fd6523d910c8bb2ff2910f065c704369cfb5c24846771"
   name = "github.com/toolkits/concurrent"
   packages = ["semaphore"]
@@ -181,14 +173,6 @@
   revision = "e225da77a7e68af35c70ccbf71af2b83e6acac3c"
 
 [[projects]]
-  branch = "master"
-  digest = "1:9d531f81319846d063202616c0dd87bbf03b7f15c23136cba085b2b79432b4ec"
-  name = "golang.org/x/sys"
-  packages = ["unix"]
-  pruneopts = "NT"
-  revision = "f49334f85ddcf0f08d7fb6dd7363e9e6d6b777eb"
-
-[[projects]]
   digest = "1:10fc3c47c44c6c689df5003224dda60080542ffad59c5d88f8e87c3d410ec3eb"
   name = "gopkg.in/eapache/go-resiliency.v1"
   packages = ["semaphore"]
@@ -217,7 +201,6 @@
     "github.com/subchen/go-trylock",
     "github.com/tarndt/sema",
     "github.com/tj/go-sync/semaphore",
-    "github.com/tmthrgd/go-sem",
     "github.com/toolkits/concurrent/semaphore",
     "github.com/vada-ir/semaphore",
     "golang.org/x/sync/semaphore",
