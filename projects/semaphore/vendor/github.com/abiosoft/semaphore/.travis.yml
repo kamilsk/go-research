@@ -1,8 +1,0 @@
-language: go
-
-sudo: false
-
-script:
-  - go vet
-  - go build
-  - go test -race -cover

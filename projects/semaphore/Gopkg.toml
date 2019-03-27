@@ -112,6 +112,5 @@ required = [
   version = "v1"
 
 [prune]
-  unused-packages = false
-  non-go = false
-  go-tests = false
+  non-go = true
+  go-tests = true

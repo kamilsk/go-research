@@ -3,109 +3,109 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:aa68d54ba3ba645d2063aa7b80b1bce57c140896f35f12c80dc248bd87478c20"
+  digest = "1:cffa72d9f583c8025c436fc601546fb577648e5d94567cfc483cff8ae0a91e12"
   name = "github.com/abiosoft/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "cb737ff681bd644054d04b9e420135e01179114d"
 
 [[projects]]
   branch = "master"
-  digest = "1:553f8416001d9417c33edec68f2034489d45ebb3e9715eb93ce430643b343f62"
+  digest = "1:943c9077542c0ad75c54fa2b47b865a2be9b5478541bb9a87112bb19eb96c16f"
   name = "github.com/andreyvit/sem"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "51d9c5c4f5082d89e3ac9d6b1bc187c0cc86fcf5"
 
 [[projects]]
   branch = "master"
-  digest = "1:ceb9e5e8e784a832cad22b78fa70dd9578a88667d090099107aeb797a831fcd7"
+  digest = "1:38435eebf1d58e66751281bf2ce62f4bd234ba07e16c8fb97f2114b69bcf5b5d"
   name = "github.com/avezila/psem"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "9998d632c317d544fdee1a04c4775db8bc68e3d2"
 
 [[projects]]
   branch = "master"
-  digest = "1:d34227907bbe6f204d7951b018b4b98fde444656b259c0f5f7b5164ab5592dc3"
+  digest = "1:7bc1e2e78966f732246818ae42b10a8915b786a1824a46e6e003ffc0753c904e"
   name = "github.com/bluele/go-semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "8aff93824fd52426b33513e6224d70ac09d7957c"
 
 [[projects]]
   branch = "master"
-  digest = "1:891bff8c78655a9228eafd73d88c961954e2ee89b8e812246ae2af8e0b0be8e9"
+  digest = "1:65748d130a0b522b08132362814500eca29ecd88397e4516ae004aba80aab528"
   name = "github.com/carlmjohnson/go-utils"
   packages = ["semaphore"]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "3990067f140bd1e9878f1b7801df008629ad1d52"
 
 [[projects]]
   branch = "master"
-  digest = "1:691b89d437f8e83ad4e884525cddccea1c809187168bd7a9e10554e087218754"
+  digest = "1:40ce7c58f995397de3fa73f32da24e9fe84cc90a4eae0429d9e83e125971abc3"
   name = "github.com/cognusion/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "cfa287382ee8184c1db2a176e76cfb2962dcb96e"
 
 [[projects]]
   branch = "master"
-  digest = "1:e25a116e92405c733882af923d45dbb1771a11e965f47af778152818bc1ebec8"
+  digest = "1:100140f1478da3863949a7b23dba2273196733b9f699a99f13f5734e2af36e05"
   name = "github.com/dexterous/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "dbfac97a3f9e02a8fd4bd7ba04fa837a4720281e"
 
 [[projects]]
   branch = "master"
-  digest = "1:a83b82afa323a365cf761efcc83ae41c6071d42b87f6e6693e018dab803d9fc9"
+  digest = "1:aab7ba16da2896cfbdfb1730d38b8440fcb9a1f736a295df93dab19e30addb7b"
   name = "github.com/dropbox/godropbox"
   packages = [
     "errors",
     "sync2",
   ]
-  pruneopts = ""
-  revision = "31879d3884b90dd94c44c85c0e4f1aff3bbb90e2"
+  pruneopts = "NT"
+  revision = "becbb8a577f395355c0d2d213e5da1018273d6d9"
 
 [[projects]]
   branch = "master"
-  digest = "1:28e205d1949e513b325c55c13e12b2eda00dfa91c39393e3e92894f360c16c2e"
+  digest = "1:b44ebec197ade43663a942cd96e3a6f60ec808e011c9322cef7c5c0fe673c905"
   name = "github.com/jsipprell/go-semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "e3745e5247e61541c301c62ee264e26628c38d1a"
 
 [[projects]]
   branch = "master"
-  digest = "1:3f748958d703aa00e9c20ee2c93bc1bdb82f87ab66c66851f5dd1d5a4b558f12"
+  digest = "1:bc0369af381b64963c94dcd41dfa378919068e597ae18ff3b5d368c663efb575"
   name = "github.com/marusama/semaphore"
   packages = ["."]
-  pruneopts = ""
-  revision = "567f17206eaa3f28bd73e209620e2abaa65d7405"
+  pruneopts = "NT"
+  revision = "6952cef993b28a4d0871600e08bfcf2f2b1207a0"
 
 [[projects]]
   branch = "master"
-  digest = "1:2da127bea889f71ab97e1dd8ca9b6085153a71aec4e999a83975a8c8de35816a"
+  digest = "1:5780127059a6ce20f11345e0619201436f088452852601234798157be1ddb072"
   name = "github.com/nicholasjackson/bench"
   packages = ["semaphore"]
-  pruneopts = ""
-  revision = "39c3cb80881e351daac20452d3985fdbd7a8c5fa"
+  pruneopts = "NT"
+  revision = "2df9635f0ad020b2e82616b0fd87130aaa1ee12e"
 
 [[projects]]
   branch = "master"
-  digest = "1:92b2ca64d3aa3c12b6a32982de2980330581bfc15ed8ef6370ac2172d0437ddc"
+  digest = "1:e106a389e4bbe81bbc11f5c0d884bd9df0b750b4ab203ee8a116dbb62cbcdf6d"
   name = "github.com/pivotal-golang/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "8d2d0aa1f213493f9ef531ad673a08930c360312"
 
 [[projects]]
   branch = "master"
-  digest = "1:c40a2524a6d40d6e47aa442a78d2489ce4bfc9e2d8692b98c83f7e9afc9a1a2e"
+  digest = "1:142dfaa9a9498de0c94cd72da76ff6a283969e269d7fd18461ee8f48a7d8b349"
   name = "github.com/seanjohnno/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "dbd495df94b9e0d911bc2a07a7c4c50a13e66629"
 
 [[projects]]
@@ -113,86 +113,86 @@
   digest = "1:ab3c53293ebc41af390de6cded19d7e921c6fa424403662ece3d258ac7070bb5"
   name = "github.com/spektroskop/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "c6667b50d46d2f2e14d94a1627a7f7144195d1b2"
 
 [[projects]]
   branch = "master"
-  digest = "1:3e2c319fe27a5de611e58adc1440f722a9e8511c7df6201425f2a2b579156fa8"
+  digest = "1:5cbdf380fcdd7f0d9e29ea3178687287627cf95aaba6bf8902c6ff0f22f098ad"
   name = "github.com/subchen/go-trylock"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "30cc6d71dc242b0e5331eb40ded9722800abad99"
 
 [[projects]]
   branch = "master"
-  digest = "1:9780565e228a2bb2fd0d820596181ef8c5cd718a8777799fdc6bcba618fcb9bb"
+  digest = "1:a6dd7a0f64efbc105ec1b88a4a9909c8ef2d6ff742aaddb1db5b71069d127797"
   name = "github.com/tarndt/sema"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "5335fa8ba954e492b237d9ba30d07b57e1b2ef3f"
 
 [[projects]]
   branch = "master"
-  digest = "1:cc552c9c43c80350fa0ae66a84a9f40ab16a48b16e06e3f85c09c3a62b799fe5"
+  digest = "1:162fdf53bc17ef5de8f7f43693b106e6a894ece4c2236b1c1effa4d1cefb3f4c"
   name = "github.com/tj/go-sync"
   packages = ["semaphore"]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "e26b219dec0feee86944dfe161abfb9c6a338646"
 
 [[projects]]
   branch = "master"
-  digest = "1:b62f52ecc0dd16809a5a8f0cc53559f7aa1b72b5b23f98e3ff46cb2f77e44255"
+  digest = "1:c912c6ad252d2f77f19b64f66d1696845952475f52df5271597585e0d03c8062"
   name = "github.com/tmthrgd/go-sem"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "0214dbf5387720b1ff35c31913423f4d1fbde077"
 
 [[projects]]
   branch = "master"
-  digest = "1:d75d43af876dd712e107ee199d1cc3daed3db4142a4df5950be17e8702e70cc8"
+  digest = "1:02a851bc2db5f334a43fd6523d910c8bb2ff2910f065c704369cfb5c24846771"
   name = "github.com/toolkits/concurrent"
   packages = ["semaphore"]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "a4371d70e3e308db0d5f90c2b1f5efaa84add725"
 
 [[projects]]
   branch = "master"
-  digest = "1:caf4cf24c6255529805f2fc64c111926bef2abb006db1432f584cd3afdd6390c"
+  digest = "1:5d070826da0a4a01518cec01a6f8b809c036173193f87c63ec3281333458090f"
   name = "github.com/vada-ir/semaphore"
   packages = ["."]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "566ed412777737d9b810f167bdca75fd066d8440"
 
 [[projects]]
   branch = "master"
-  digest = "1:3a3c1b660248c0ec25f00cfb9c6526bd5b0ede4c8bfa2ed56a3f5e7e9d0a19cd"
+  digest = "1:f9d2f13baed365df2f09249c839e783cc66ff4f5287d1399a2d558e4ffe7f106"
   name = "golang.org/x/net"
   packages = ["context"]
-  pruneopts = ""
-  revision = "146acd28ed5894421fb5aac80ca93bc1b1f46f87"
+  pruneopts = "NT"
+  revision = "710a502c58a2a4b2d7417a4e24ccb96d8dc13fa3"
 
 [[projects]]
   branch = "master"
-  digest = "1:b2ea75de0ccb2db2ac79356407f8a4cd8f798fe15d41b381c00abf3ae8e55ed1"
+  digest = "1:dddcecff308c7862d83399d61f6c1f64ed6d734ff56c7e3f7435811b9f5bc014"
   name = "golang.org/x/sync"
   packages = ["semaphore"]
-  pruneopts = ""
-  revision = "1d60e4601c6fd243af51cc01ddf169918a5407ca"
+  pruneopts = "NT"
+  revision = "e225da77a7e68af35c70ccbf71af2b83e6acac3c"
 
 [[projects]]
   branch = "master"
-  digest = "1:a4bda6e065eb3ccf1e6adeaa863cb416e0ae6b43e613f20a8931d52d19dc20e2"
+  digest = "1:9d531f81319846d063202616c0dd87bbf03b7f15c23136cba085b2b79432b4ec"
   name = "golang.org/x/sys"
   packages = ["unix"]
-  pruneopts = ""
-  revision = "4497e2df6f9e69048a54498c7affbbec3294ad47"
+  pruneopts = "NT"
+  revision = "f49334f85ddcf0f08d7fb6dd7363e9e6d6b777eb"
 
 [[projects]]
-  digest = "1:6d6672f85a84411509885eaa32f597577873de00e30729b9bb0eb1e1faa49c12"
+  digest = "1:10fc3c47c44c6c689df5003224dda60080542ffad59c5d88f8e87c3d410ec3eb"
   name = "gopkg.in/eapache/go-resiliency.v1"
   packages = ["semaphore"]
-  pruneopts = ""
+  pruneopts = "NT"
   revision = "ea41b0fad31007accc7f806884dcdf3da98b79ce"
   version = "v1.1.0"
 
