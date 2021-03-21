@@ -6,15 +6,15 @@
 
 ### Candidates
 
-- [github.com/bcicen/grmon][grmon]
 - [github.com/google/gops][gops]
+- [github.com/bcicen/grmon][grmon]
 
 ### Summary
 
-| Criteria         | [grmon][] | [gops][] |
+| Criteria         | [gops][] | [grmon][] |
 |:-----------------|:---:|:---:|
-| Liveliness       | ❎ | ✅ |
-| No external deps | ✅ | ❎ |
+| Liveliness       | ✅ | ❎ |
+| No external deps | ❎ | ✅ |
 | License          | MIT | MIT |
 | Score            |   |   |   |
 
@@ -22,5 +22,5 @@
 
 ...
 
-[grmon]: https://github.com/bcicen/grmon
 [gops]:  https://github.com/google/gops
+[grmon]: https://github.com/bcicen/grmon

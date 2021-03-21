@@ -26,21 +26,17 @@
 | Substitution     |
 | - `log.Logger`   | ✅ | ❎ | ❎ |
 | - `io.Writer`    | ✅ | ❎ | ✅ |
-| Documentation    |
-| - benchmarks     | ✅ | ✅ | ✅ |
-| - examples       | ✅ | ❎ | ✅ |
 | Features         |
 | - formatter      | ✅ | ✅ | ✅ |
 | - levels         | ✅ | ✅ | ✅ |
 | - nesting        | ✅ | ✅ | ✅ |
-| - structured     | ✅ | ✅ | ✅ |
 | - timestamp      | ✅ | ✅ | ✅ |
 | License          | MIT | MIT | MIT |
 | Score            | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
 
 ### Recommendation
 
-[go.uber.org/zap][zap] has good performance and flexible configuration.
+[zap][] has good performance and flexible configuration, but verbose API.
 
 [logrus]:  https://github.com/sirupsen/logrus
 [zap]:     https://github.com/uber-go/zap

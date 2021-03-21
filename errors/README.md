@@ -10,30 +10,44 @@
 
 ### Candidates
 
-- [github.com/juju/errors](https://github.com/juju/errors)
-- [github.com/pkg/errors](https://github.com/pkg/errors)
+- [github.com/goph/emperror][emperror]
+- [github.com/juju/errors][juju/errors]
+- [github.com/pkg/errors][pkg/errors]
 
 ### Summary
 
-| Criterion        | juju/errors | pkg/errors   |
-|:-----------------|:-----------:|:------------:|
-| Liveliness       | ✅          | ✅           |
-| No external deps | ✅          | ✅           |
-| Simplicity       | ❎          | ✅           |
-| Replace          |             |              |
-| - `errors.New`   | ✅          | ✅           |
-| - `fmt.Errorf`   | ✅          | ✅           |
-| Only context     | ❎          | ✅           |
-| Only stack trace | ❎          | ✅           |
-| Combination      | ✅          | ✅           |
-| Underlying error | ✅          | ✅           |
-| License          | LGPLv3      | BSD-2-Clause |
-| Score            | ⭐️⭐️⭐️⭐️    | ⭐️⭐️⭐️⭐️     |
+| Criterion        | [emperror][] | [juju/errors][] | [pkg/errors][] |
+|:-----------------|:---:|:---:|:---:|
+| Liveliness       | ✅ | ✅ | ✅ |
+| No external deps | ❎ | ✅ | ✅ |
+| Simplicity       | ✅ | ❎ | ✅ |
+| Substitution     |
+| - `errors.New`   |   | ✅ | ✅ |
+| - `fmt.Errorf`   |   | ✅ | ✅ |
+| Packing with     |
+| - context        |   | ❎ | ❎ |
+| - description    |   | ❎ | ✅ |
+| - error          |   | ✅ | ✅ |
+| - stack trace    |   | ❎ | ✅ |
+| Unpacking        |
+| - context        |
+| - description    |
+| - error          |
+| - stack trace    |
+| Underlying error | ✅ | ✅ | ✅ |
+| License          | LGPLv3 | BSD-2-Clause | MIT |
+| Score            | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+
+<sup id="anchor-">[1](#)</sup>
+<sup id="">1</sup> [↩](#anchor-)
 
 ### Recommendation
 
-[github.com/juju/errors](https://github.com/juju/errors) is more complex and rich,
-but [github.com/pkg/errors](https://github.com/pkg/errors) is my preferred choice.
+[github.com/juju/errors][juju/errors] is more complex and rich, but [github.com/pkg/errors][pkg/errors] is
+my preferred choice because of simplicity.
+
+[github.com/goph/emperror][emperror] extends [github.com/pkg/errors][pkg/errors] and provides useful ideas
+and integrations, but has not optimal code, `emperror.Context()` as example, and copy/paste from [pkg/errors][].
 
 ## Panic handlers
 
@@ -58,7 +72,7 @@ but [github.com/pkg/errors](https://github.com/pkg/errors) is my preferred choic
 [github.com/oxequa/grace][grace] has some disadvantages, for example, you cannot obtain the original error
 and by default the original error message is concatenated with stack trace without any new lines or spaces.
 
-[github.com/goph/emperror][emperror] is closest to my needs.
+[github.com/goph/emperror][emperror] is closest to my needs, but has an external dependency.
 
 [emperror]:    https://github.com/goph/emperror
 [juju/errors]: https://github.com/juju/errors
